@@ -7,14 +7,17 @@ module.exports = NodeHelper.create({
     this.countDown = 10000000
   },
 
+  getData: function(data){
+    result = data + "die maus";
+    this.sendSocketNotification('CALENDAR_RESULT', result);
+  },
+
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
 
-    if(notification == "MMM-RECYCLINGCALENDAR-GET"){
-      this.countDown = "rest call done"; 
-      payload = this.countDown;
-      this.sendSocketNotification("I_DID", this.countDown);
+    if(notification === "CALENDAR_GET"){
+      this.getData(payload);
     }
 
 
