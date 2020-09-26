@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
   },
 
   getData: function(data){
-    result = data + " die maus";
+    result = data + "die maus";
     this.sendSocketNotification('CALENDAR_RESULT', result);
   },
 
