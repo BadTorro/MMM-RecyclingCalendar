@@ -29,7 +29,7 @@ Module.register("MMM-RecyclingCalendar", {
         switch(notification) {
           case "DOM_OBJECTS_CREATED":
             var timer = setInterval(()=>{
-              this.updateDom()
+              this.sendSocketNotification("MMM-RECYCLINGCALENDAR-CONFIG", this.count)
               this.count++
             }, 1000)
             break
