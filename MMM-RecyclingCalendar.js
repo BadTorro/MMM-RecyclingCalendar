@@ -16,7 +16,7 @@ Module.register("MMM-RecyclingCalendar", {
         var element = document.createElement("div")
         element.className = "myContent"
         element.innerHTML = "Hello, World! " + this.config.foo
-        element.innerHTML = element.innerHTML + this.config.bar;
+        // element.innerHTML = element.innerHTML + this.config.bar;
         var subElement = document.createElement("p")
         subElement.innerHTML = "Count:" + this.count
         subElement.id = "COUNT"
