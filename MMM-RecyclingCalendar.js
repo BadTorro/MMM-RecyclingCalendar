@@ -20,21 +20,29 @@ Module.register("MMM-RecyclingCalendar", {
       },
       
       notificationReceived: function(notification, payload, sender) {
-        switch(notification) {
-          case "DOM_OBJECTS_CREATED":
-            var timer = setInterval(()=>{
-              this.sendSocketNotification("MMM-RECYCLINGCALENDAR-CONFIG", this.count)
-              this.count++
-            }, 1000)
-            break
+        if (sender) {
+          Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+        } else {
+          Log.log(this.name + " received a system notification: " + notification);
         }
+
+        // switch(notification) {
+        //   case "DOM_OBJECTS_CREATED":
+        //     var timer = setInterval(()=>{
+        //       this.sendSocketNotification("MMM-RECYCLINGCALENDAR-CONFIG", this.count)
+        //       this.count++
+        //     }, 1000)
+        //     break
+        // }
       },
       socketNotificationReceived: function(notification, payload) {
-        switch(notification) {
-          case "I_DID":
-            var elem = document.getElementById("COUNT")
-            elem.innerHTML = payload;
-            break
-        }
+        Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+
+        // switch(notification) {
+        //   case "I_DID":
+        //     var elem = document.getElementById("COUNT")
+        //     elem.innerHTML = payload;
+        //     break
+        // }
       },
   })
