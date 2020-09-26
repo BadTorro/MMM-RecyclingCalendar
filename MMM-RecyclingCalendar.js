@@ -5,7 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ') + this.name; 
         
-        this.sendSocketNotification('MMM-RECYCLINGCALENDAR-CONFIG', this.config);
+        this.getTestFunction();
 
         // this.count = 0
         // var timer = setInterval(()=>{
@@ -17,6 +17,10 @@ Module.register("MMM-RecyclingCalendar", {
         var wrapper = document.createElement("div");
         wrapper.innerHTML = this.config.foo;
         return wrapper;
+      },
+
+      getTestFunction: function(){
+        this.sendSocketNotification('MMM-RECYCLINGCALENDAR-GET', this.config);
       },
       
       notificationReceived: function(notification, payload, sender) {

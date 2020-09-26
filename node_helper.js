@@ -11,7 +11,7 @@ module.exports = NodeHelper.create({
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
 
-    if(notification == "MMM-RECYCLINGCALENDAR-CONFIG"){
+    if(notification == "MMM-RECYCLINGCALENDAR-GET"){
       this.countDown = "rest call done"; 
       payload = this.countDown;
       this.sendSocketNotification("I_DID", this.countDown);
