@@ -3,6 +3,8 @@ Module.register("MMM-RecyclingCalendar", {
         foo: "I'm alive!"
       },
     start: function (){ // is executed when module is loaded successfully 
+        Log.info('Starting module: ') + this.name; 
+        
         this.count = 0
         var timer = setInterval(()=>{
           this.updateDom()
