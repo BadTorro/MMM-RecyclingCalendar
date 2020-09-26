@@ -15,6 +15,7 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
+    alert(payload);
 
     if(notification === "CALENDAR_GET"){
       this.getData(payload);
