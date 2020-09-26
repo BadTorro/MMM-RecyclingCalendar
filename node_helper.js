@@ -18,7 +18,6 @@ module.exports = NodeHelper.create({
       this.getData(payload);
     }
 
-
     // switch(notification) {
     //   case "DO_YOUR_JOB":
     //     this.sendSocketNotification("I_DID", (this.countDown - payload))
