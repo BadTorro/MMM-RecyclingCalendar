@@ -1,7 +1,9 @@
 Module.register("MMM-RecyclingCalendar", {
-    defaults: {
+    
+  defaults: {
         foo: "I'm alive!"
       },
+
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
@@ -15,6 +17,7 @@ Module.register("MMM-RecyclingCalendar", {
         //   this.count++
         // }, 1000)
       },
+
       getDom: function() {
         var wrapper = document.createElement("div");
         wrapper.innerHTML = this.config.foo;
@@ -45,6 +48,7 @@ Module.register("MMM-RecyclingCalendar", {
         //     break
         // }
       },
+      
       socketNotificationReceived: function(notification, payload) {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
