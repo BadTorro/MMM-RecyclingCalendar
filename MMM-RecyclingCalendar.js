@@ -3,7 +3,7 @@ Module.register("MMM-RecyclingCalendar", {
         foo: "I'm alive!"
       },
     start: function (){ // is executed when module is loaded successfully 
-        Log.info('Starting module: ') + this.name; 
+        Log.info('Starting module: ' + this.name);
         
         this.getTestFunction();
 
