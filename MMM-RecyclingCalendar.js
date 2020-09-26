@@ -20,6 +20,22 @@ Module.register("MMM-RecyclingCalendar", {
         return element
       },
       
-    notificationReceived: function() {},
-    socketNotificationReceived: function() {},
+      notificationReceived: function(notification, payload, sender) {
+        switch(notification) {
+          case "DOM_OBJECTS_CREATED":
+            var timer = setInterval(()=>{
+              this.updateDom()
+              this.count++
+            }, 1000)
+            break
+        }
+      },
+      socketNotificationReceived: function(notification, payload) {
+        switch(notification) {
+          case "I_DID":
+            var elem = document.getElementById("COUNT")
+            elem.innerHTML = "Count:" + payload
+            break
+        }
+      },
   })
