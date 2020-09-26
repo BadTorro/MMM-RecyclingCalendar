@@ -8,11 +8,11 @@ Module.register("MMM-RecyclingCalendar", {
         
         this.sendSocketNotification('MMM-RECYCLINGCALENDAR-CONFIG', this.config);
 
-        this.count = 0
-        var timer = setInterval(()=>{
-          this.updateDom()
-          this.count++
-        }, 1000)
+        // this.count = 0
+        // var timer = setInterval(()=>{
+        //   this.updateDom()
+        //   this.count++
+        // }, 1000)
       },
       getDom: function() {
         var element = document.createElement("div")
