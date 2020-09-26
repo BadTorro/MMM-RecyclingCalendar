@@ -1,6 +1,7 @@
 Module.register("MMM-RecyclingCalendar", {
     defaults: {
-        foo: "I'm alive!"
+        foo: "I'm alive!",
+        bar: "nope"
       },
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ') + this.name; 
@@ -15,6 +16,7 @@ Module.register("MMM-RecyclingCalendar", {
         var element = document.createElement("div")
         element.className = "myContent"
         element.innerHTML = "Hello, World! " + this.config.foo
+        element.innerHTML = this.config.bar;
         var subElement = document.createElement("p")
         subElement.innerHTML = "Count:" + this.count
         subElement.id = "COUNT"

@@ -8,6 +8,7 @@ App to show recycling data of city zuerich
 
 Similar module to: 
 - https://forum.magicmirror.builders/topic/2731/mmm-mywastepickup-toronto-waste-collection-schedule
+- https://github.com/htilburgs/MMM-MyGarbage
 
 
 Shows recycling entries for current week 
