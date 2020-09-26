@@ -6,11 +6,19 @@ module.exports = NodeHelper.create({
 
     this.countDown = 10000000
   },
+
   socketNotificationReceived: function(notification, payload) {
-    switch(notification) {
-      case "DO_YOUR_JOB":
-        this.sendSocketNotification("I_DID", (this.countDown - payload))
-        break
+
+    if(notification == "MMM-RECYCLINGCALENDAR-CONFIG"){
+      this.countDown = "rest call done"; 
+      this.sendSocketNotification("I_DID", this.countDown);
     }
+
+
+    // switch(notification) {
+    //   case "DO_YOUR_JOB":
+    //     this.sendSocketNotification("I_DID", (this.countDown - payload))
+    //     break
+    // }
   },
 })

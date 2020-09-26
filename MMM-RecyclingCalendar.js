@@ -6,6 +6,8 @@ Module.register("MMM-RecyclingCalendar", {
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ') + this.name; 
         
+        this.sendSocketNotification('MMM-RECYCLINGCALENDAR-CONFIG', this.config);
+
         this.count = 0
         var timer = setInterval(()=>{
           this.updateDom()
@@ -15,8 +17,7 @@ Module.register("MMM-RecyclingCalendar", {
       getDom: function() {
         var element = document.createElement("div")
         element.className = "myContent"
-        element.innerHTML = "Hello, World! " + this.config.foo
-        // element.innerHTML = element.innerHTML + this.config.bar;
+        element.innerHTML = "Hello, World! " + this.config.foo;
         var subElement = document.createElement("p")
         subElement.innerHTML = "Count:" + this.count
         subElement.id = "COUNT"
@@ -38,7 +39,7 @@ Module.register("MMM-RecyclingCalendar", {
         switch(notification) {
           case "I_DID":
             var elem = document.getElementById("COUNT")
-            elem.innerHTML = "Count:" + payload
+            elem.innerHTML = payload;
             break
         }
       },
