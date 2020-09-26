@@ -26,6 +26,7 @@ Module.register("MMM-RecyclingCalendar", {
 
       getTestFunction: function(){
         this.sendSocketNotification('CALENDAR_GET', this.test);
+        alert("HI");
       },
       
       notificationReceived: function(notification, payload, sender) {
