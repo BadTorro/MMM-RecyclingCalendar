@@ -48,14 +48,13 @@ Module.register("MMM-RecyclingCalendar", {
         //     break
         // }
       },
-      
+
       socketNotificationReceived: function(notification, payload) {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
         if(notification === "CALENDAR_RESULT"){
           var elem = document.getElementById("COUNT")
           elem.innerHTML = payload;
-          this.updateDom();
         }
 
         // switch(notification) {
