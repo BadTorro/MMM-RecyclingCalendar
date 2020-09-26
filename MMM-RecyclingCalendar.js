@@ -1,7 +1,6 @@
 Module.register("MMM-RecyclingCalendar", {
     defaults: {
-        foo: "I'm alive!",
-        bar: "nope"
+        foo: "I'm alive!"
       },
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ') + this.name; 
@@ -15,14 +14,9 @@ Module.register("MMM-RecyclingCalendar", {
         // }, 1000)
       },
       getDom: function() {
-        var element = document.createElement("div")
-        element.className = "myContent"
-        element.innerHTML = "Hello, World! " + this.config.foo;
-        var subElement = document.createElement("p")
-        subElement.innerHTML = "Count:" + this.count
-        subElement.id = "COUNT"
-        element.appendChild(subElement)
-        return element
+        var wrapper = document.createElement("div");
+        wrapper.innerHTML = this.config.foo;
+        return wrapper;
       },
       
       notificationReceived: function(notification, payload, sender) {
