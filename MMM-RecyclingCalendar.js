@@ -5,7 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
         
-        this.getTestFunction();
+        // this.getTestFunction();
 
         // this.count = 0
         // var timer = setInterval(()=>{
@@ -28,6 +28,10 @@ Module.register("MMM-RecyclingCalendar", {
           Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
         } else {
           Log.log(this.name + " received a system notification: " + notification);
+        }
+
+        if(notification == "DOM_OBJECTS_CREATED"){
+          this.getTestFunction();
         }
 
         // switch(notification) {
