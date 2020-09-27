@@ -69,8 +69,8 @@ Module.register("MMM-RecyclingCalendar", {
           var entriesContainer = document.createElement("div");
           entriesContainer.classList.add("entries-container");
 
-          var dt = DateTime.local();
-          console.log("DATETIME: "+dt);
+          // var dt = DateTime.local();
+          // console.log("DATETIME: "+dt);
 
           // add date 
           var dateEntry = document.createElement("span");
