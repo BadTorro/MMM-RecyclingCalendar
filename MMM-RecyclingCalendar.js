@@ -3,7 +3,7 @@ Module.register("MMM-RecyclingCalendar", {
   defaults: {
         foo: "I'm alive!",
         zipCode: 8047, 
-        weekToDisplay: 1, 
+        daysToDisplay: 7,  
         url: "http://openerz.metaodi.ch/api/calendar.json",
       },
 
@@ -32,7 +32,7 @@ Module.register("MMM-RecyclingCalendar", {
       },
 
       getTestFunction: function(){
-        this.sendSocketNotification('CALENDAR_GET', this.test);
+        this.sendSocketNotification('CALENDAR_GET', this.config);
       },
       
       notificationReceived: function(notification, payload, sender) {

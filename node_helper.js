@@ -13,6 +13,8 @@ module.exports = NodeHelper.create({
     // var dt = DateTime.local();
     // var startdate = dt.toISODate();
     
+    console.log("Data: " + data.daysToDisplay);
+
     var startdate = DateTime.local().toISODate();
     var enddate = DateTime.local().plus({ days: 7}).toISODate();
 
@@ -23,7 +25,7 @@ module.exports = NodeHelper.create({
     result = startdate;
     console.log("Startdate: " + result);
     result = enddate; 
-    console.log("Enddate "+result);
+    console.log("Enddate: "+result);
     this.sendSocketNotification('CALENDAR_RESULT', result);
     // set start date = today 
     // set end date = today + 7 days 
