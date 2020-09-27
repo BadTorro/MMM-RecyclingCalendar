@@ -11,6 +11,7 @@ module.exports = NodeHelper.create({
     // this.sendSocketNotification('CALENDAR_RESULT', result);
 
     var now = DateTime.local().toString();
+    now = now.toLocaleString();
     // console.log("DATE " + dt);
 
     // var startdate = DateTime.local();
