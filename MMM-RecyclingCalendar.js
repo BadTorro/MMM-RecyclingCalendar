@@ -81,6 +81,7 @@ Module.register("MMM-RecyclingCalendar", {
 
           // add type 
           var typeEntry = document.createElement("span");
+          typeEntry.classList.add("entry-type");
           typeEntry.innerHTML = entry['type'];
           entriesContainer.appendChild(typeEntry);
 

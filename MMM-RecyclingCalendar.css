@@ -11,3 +11,11 @@
  .MMM-RecyclingCalendar .entries-container .entry-date {
     color: #FFF;
 }
+
+.MMM-RecyclingCalendar .entries-container .entry-type {
+    white-space: nowrap;
+    position: absolute;
+    right : 0px;
+    top: 6px;
+    line-height: 24px;
+  }
