@@ -11,6 +11,7 @@ Module.register("MMM-RecyclingCalendar", {
   getStyles: function () {
     return ["MMM-RecyclingCalendar.css"];
   },  
+  
 
   // define required scripts
   getScripts: function () {
