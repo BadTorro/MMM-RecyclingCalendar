@@ -52,7 +52,7 @@ Module.register("MMM-RecyclingCalendar", {
 
         if(notification == "CALENDAR_RESULT"){
           Log.log(payload['result']);
-          Log.log("Payload length: "+payload.length);
+          Log.log("Payload length: "+payload['result'].length);
           this.calendarData = payload;
           
 
