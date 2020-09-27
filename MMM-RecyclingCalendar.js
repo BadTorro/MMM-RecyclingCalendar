@@ -12,7 +12,6 @@ Module.register("MMM-RecyclingCalendar", {
     return ["MMM-RecyclingCalendar.css"];
   },  
   
-
   // define required scripts
   getScripts: function () {
     return ["moment.js"];
