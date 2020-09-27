@@ -69,9 +69,8 @@ Module.register("MMM-RecyclingCalendar", {
           var entriesContainer = document.createElement("div");
           entriesContainer.classList.add("entries-container");
 
-          var DateTime = luxon.DateTime;
           var dt = DateTime.local();
-          Log.log("DATETIME: "+dt);
+          console.log("DATETIME: "+dt);
 
           // add date 
           var dateEntry = document.createElement("span");
