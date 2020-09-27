@@ -4,7 +4,7 @@ Module.register("MMM-RecyclingCalendar", {
         foo: "I'm alive!",
         zipCode: 8047, 
         weekToDisplay: 1, 
-        url = "http://openerz.metaodi.ch/api/calendar.json",
+        url: "http://openerz.metaodi.ch/api/calendar.json",
       },
 
     start: function (){ // is executed when module is loaded successfully 
