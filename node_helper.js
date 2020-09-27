@@ -10,9 +10,13 @@ module.exports = NodeHelper.create({
     // result = data + "die maus";
     // this.sendSocketNotification('CALENDAR_RESULT', result);
 
-    var startdate = DateTime.local();
-    result = startdate; 
-    console.log("RESULT: " + result);
+    var curDate = DateTime.local();
+    var dt = DateTime.fromISO(curDate);
+    console.log("DATE " + dt);
+
+    // var startdate = DateTime.local();
+    // result = startdate; 
+    // console.log("RESULT: " + result);
     this.sendSocketNotification('CALENDAR_RESULT', result);
     // set start date = today 
     // set end date = today + 7 days 
@@ -23,7 +27,7 @@ module.exports = NodeHelper.create({
     console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
 
-    if(notification == "CALENDAR_GET"){
+    if(notification === "CALENDAR_GET"){
       this.getData(payload);
     }
 
