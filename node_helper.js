@@ -40,9 +40,8 @@ module.exports = NodeHelper.create({
         console.log(error);
       }
          
-      // console.log(json);
-      result = json; 
-      this.sendSocketNotification('CALENDAR_RESULT', result);
+      // console.log(json); 
+      this.sendSocketNotification('CALENDAR_RESULT', json);
 
     })();
 
