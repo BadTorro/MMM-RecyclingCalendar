@@ -10,8 +10,8 @@ module.exports = NodeHelper.create({
     // result = data + "die maus";
     // this.sendSocketNotification('CALENDAR_RESULT', result);
 
-    var now = DateTime.local().toString();
-    now = now.toLocaleString();
+    now = DateTime.local().toString();
+    now = now.toISODate();
     // console.log("DATE " + dt);
 
     // var startdate = DateTime.local();
