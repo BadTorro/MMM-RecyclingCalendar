@@ -51,25 +51,13 @@ Module.register("MMM-RecyclingCalendar", {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
         if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
-          Log.log(payload['result']);
-          Log.log("Payload length: "+payload['result'].length);
+          // Log.log(payload['result']);
+          // Log.log("Payload length: "+payload['result'].length);
           this.calendarData = payload['result'];  
-          
-
-          // for(var i = 0; i<this.calendarData.length; i++){
-          //   console.log("hello");
-          //   console.log(this.calendarData[i]['type']);
-          // }
 
           this.updateDom(1000);
         }
 
-        // switch(notification) {
-        //   case "I_DID":
-        //     var elem = document.getElementById("COUNT")
-        //     elem.innerHTML = payload;
-        //     break
-        // }
       },
 
       getDom: function() {
@@ -86,6 +74,7 @@ Module.register("MMM-RecyclingCalendar", {
           var entriesContainer = document.createElement("div");
 
           var listEntry = document.createElement("span");
+          listEntry.innerHTML = entry['date'];
           listEntry.innerHTML = entry['type'];
 
           entriesContainer.appendChild(listEntry);
