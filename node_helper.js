@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
     console.log("Starting node_helper.js for module: "+this.name);
   },
 
-  getData: function(data){
+  getCalendarData: function(payload){
     // result = data + "die maus";
     // this.sendSocketNotification('CALENDAR_RESULT', result);
 
@@ -16,19 +16,17 @@ module.exports = NodeHelper.create({
     // console.log("Data: " + data.daysToDisplay);
 
     var startdate = DateTime.local().toISODate();
-    var enddate = DateTime.local().plus({ days: data.daysToDisplay }).toISODate();
+    var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
 
-    // console.log("DATE " + dt);
+    fetch(payloard.url)
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(myJson){
+      console.log(myJson);
+    });
 
-    // var startdate = DateTime.local();
-    // result = startdate; 
-    result = startdate;
-    console.log("Startdate: " + result);
-    result = enddate; 
-    console.log("Enddate: "+result);
     this.sendSocketNotification('CALENDAR_RESULT', result);
-    // set start date = today 
-    // set end date = today + 7 days 
 
   },
 
@@ -37,7 +35,7 @@ module.exports = NodeHelper.create({
 
 
     if(notification === "CALENDAR_GET"){
-      this.getData(payload);
+      this.getCalendarData(payload);
     }
 
     // switch(notification) {
