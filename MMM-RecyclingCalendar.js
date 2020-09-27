@@ -7,16 +7,20 @@ Module.register("MMM-RecyclingCalendar", {
         url: "http://openerz.metaodi.ch/api/calendar.json",
       },
 
+  // define required style sheets 
   getStyles: function () {
     return ["MMM-RecyclingCalendar.css"];
   },  
+
+  // define required scripts
+  getScripts: function () {
+    return ["moment.js"];
+  },
     
   start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
-
         this.calendarData = [];
-
         
         this.getRecyclingData();
       },
