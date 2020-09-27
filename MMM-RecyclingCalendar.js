@@ -78,13 +78,16 @@ Module.register("MMM-RecyclingCalendar", {
         if(notification === "CALENDAR_RESULT"){
           // var elem = document.getElementById("COUNT")
           // elem.innerHTML = payload;
-          console.log(payload);
+          // console.log(payload);
           this.calendarData = payload;
 
-          for(var i = 0; i<this.calendarData.length; i++){
-            console.log("hello");
-            console.log(this.calendarData[i]['type']);
-          }
+          console.log(this.calendarData.length);
+          
+
+          // for(var i = 0; i<this.calendarData.length; i++){
+          //   console.log("hello");
+          //   console.log(this.calendarData[i]['type']);
+          // }
 
           this.updateDom();
         }
