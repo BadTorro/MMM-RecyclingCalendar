@@ -19,7 +19,7 @@ Module.register("MMM-RecyclingCalendar", {
         Log.info('Starting module: ' + this.name);
 
         this.calendarData = [];
-        
+      
         this.getRecyclingData();
       },
 
