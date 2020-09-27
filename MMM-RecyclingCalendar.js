@@ -14,7 +14,7 @@ Module.register("MMM-RecyclingCalendar", {
   
   // define required scripts
   getScripts: function () {
-    return ["luxon"];
+    // return ["luxon"];
   },
     
   start: function (){ // is executed when module is loaded successfully 
