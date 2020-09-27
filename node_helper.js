@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
     // console.log("Data: " + data.daysToDisplay);
 
     var startdate = moment().format('YYYY-MM-DD');
-    console.log(startdate);
+    var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
     // var startdate = DateTime.local().toISODate();
     // var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
