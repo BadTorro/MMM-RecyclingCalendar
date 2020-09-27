@@ -1,4 +1,4 @@
-.MMM-RecyclingCalender .entries-Container {
+.MMM-RecyclingCalendar .entries-container {
     line-height: 1.75;
     font-size: 20px;
     margin: 0;
@@ -8,6 +8,6 @@
     text-align: left
 }
   
- .MMM-RecyclingCalender .entries-Container .entry-Date {
+ .MMM-RecyclingCalendar .entries-container .entry-date {
     color: #FFF;
 }
