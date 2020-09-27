@@ -43,7 +43,7 @@ module.exports = NodeHelper.create({
       console.log(json);
       result = json; 
       this.sendSocketNotification('CALENDAR_RESULT', result);
-      
+
     })();
 
 
@@ -55,7 +55,7 @@ module.exports = NodeHelper.create({
     console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
 
-    if(notification === "CALENDAR_GET"){
+    if(notification == "CALENDAR_GET"){
       this.getCalendarData(payload);
     }
 

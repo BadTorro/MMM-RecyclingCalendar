@@ -50,9 +50,7 @@ Module.register("MMM-RecyclingCalendar", {
       socketNotificationReceived: function(notification, payload) {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-        if(notification === "CALENDAR_RESULT" && payload.length > 0){
-          // var elem = document.getElementById("COUNT")
-          // elem.innerHTML = payload;
+        if(notification == "CALENDAR_RESULT" && payload.length > 0){
           console.log(payload);
           console.log("Payload length: "+payload.length);
           this.calendarData = payload;
