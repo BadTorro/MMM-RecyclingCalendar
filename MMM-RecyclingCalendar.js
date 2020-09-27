@@ -14,9 +14,6 @@ Module.register("MMM-RecyclingCalendar", {
   
   // define required scripts
   // TOOD: add luxon script 
-  getScripts: function () {
-    // return ["luxon"];
-  },
     
   start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
