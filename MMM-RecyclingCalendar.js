@@ -58,6 +58,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   },
 
+  // TODO: #3 make wider appearance of calendar list 
   getDom: function() {
     var wrapper = document.createElement("div");
 
