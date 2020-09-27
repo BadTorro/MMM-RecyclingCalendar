@@ -28,6 +28,7 @@ module.exports = NodeHelper.create({
 
     url.search = params.toString();
 
+    var result;
     (async () => {
       try {
         var response = await fetch(url, {
@@ -41,9 +42,9 @@ module.exports = NodeHelper.create({
       }
          
       console.log(json);
+      result = json;
     })();
 
-    result = json;
     this.sendSocketNotification('CALENDAR_RESULT', result);
 
   },
