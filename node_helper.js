@@ -13,10 +13,10 @@ module.exports = NodeHelper.create({
     // var dt = DateTime.local();
     // var startdate = dt.toISODate();
     
-    console.log("Data: " + data.daysToDisplay);
+    // console.log("Data: " + data.daysToDisplay);
 
     var startdate = DateTime.local().toISODate();
-    var enddate = DateTime.local().plus({ days: 7}).toISODate();
+    var enddate = DateTime.local().plus({ days: data.daysToDisplay }).toISODate();
 
     // console.log("DATE " + dt);
 
