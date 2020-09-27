@@ -10,10 +10,13 @@ Module.register("MMM-RecyclingCalendar", {
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
-        this.test = "aus ";
+        // this.test = "aus ";
+
+        this.calendarData = [];
 
         
         this.getTestFunction();
+
 
         // this.count = 0
         // var timer = setInterval(()=>{
@@ -28,7 +31,23 @@ Module.register("MMM-RecyclingCalendar", {
         var subElement = document.createElement("p");
         subElement.id = "COUNT";
         wrapper.appendChild(subElement);
-        return wrapper;
+        // return wrapper;
+
+        for(var i = 0; i<this.calendarData.length; i++){
+          var entry = this.calendarData[i];
+
+          var entriesContainer = document.createElement("div");
+
+          var listEntry = document.createElement("span");
+          listEntry.innerHTML = entry['type'];
+
+          entriesContainer.appendChild(listEntry);
+
+          wrapper.appendChild(entriesContainer);
+        }
+
+        return wrapper; 
+
       },
 
       getTestFunction: function(){
@@ -57,8 +76,10 @@ Module.register("MMM-RecyclingCalendar", {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
         if(notification === "CALENDAR_RESULT"){
-          var elem = document.getElementById("COUNT")
-          elem.innerHTML = payload;
+          // var elem = document.getElementById("COUNT")
+          // elem.innerHTML = payload;
+          this.calendarData = payload;
+          this.updateDom();
         }
 
         // switch(notification) {

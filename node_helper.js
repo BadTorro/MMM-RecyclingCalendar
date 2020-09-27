@@ -43,6 +43,7 @@ module.exports = NodeHelper.create({
       console.log(json);
       result = json; 
       this.sendSocketNotification('CALENDAR_RESULT', result);
+      
     })();
 
 
