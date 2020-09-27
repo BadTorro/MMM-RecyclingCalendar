@@ -14,22 +14,14 @@ Module.register("MMM-RecyclingCalendar", {
   start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
-        // this.test = "aus ";
 
         this.calendarData = [];
 
         
-        this.getTestFunction();
-
-
-        // this.count = 0
-        // var timer = setInterval(()=>{
-        //   this.updateDom()
-        //   this.count++
-        // }, 1000)
+        this.getRecyclingData();
       },
 
-      getTestFunction: function(){
+      getRecyclingData: function(){
         this.sendSocketNotification('CALENDAR_GET', this.config);
       },
       
