@@ -19,7 +19,7 @@ module.exports = NodeHelper.create({
     var startdate = DateTime.local().toISODate();
     var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
 
-    fetch(payloard.url)
+    fetch(payload.url)
     .then(function(response){
       return response.json();
     })
