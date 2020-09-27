@@ -73,11 +73,13 @@ Module.register("MMM-RecyclingCalendar", {
 
           var entriesContainer = document.createElement("div");
 
-          var listEntry = document.createElement("span");
-          listEntry.innerHTML = entry['date'];
-          listEntry.innerHTML = entry['type'];
+          var dateEntry = document.createElement("span");
+          dateEntry.innerHTML = entry['date'];
+          entriesContainer.appendChild(dateEntry);
 
-          entriesContainer.appendChild(listEntry);
+          var typeEntry = document.createElement("span");
+          typeEntry.innerHTML = entry['type'];
+          entriesContainer.appendChild(typeEntry);
 
           wrapper.appendChild(entriesContainer);
         }
