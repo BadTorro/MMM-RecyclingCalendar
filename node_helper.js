@@ -16,7 +16,7 @@ module.exports = NodeHelper.create({
     // var startdate = DateTime.local();
     // result = startdate; 
     result = now;
-    console.log("RESULT: " + result);
+    console.log("TEST RESULT: " + result);
     this.sendSocketNotification('CALENDAR_RESULT', result);
     // set start date = today 
     // set end date = today + 7 days 
