@@ -62,11 +62,6 @@ Module.register("MMM-RecyclingCalendar", {
 
       getDom: function() {
         var wrapper = document.createElement("div");
-        wrapper.innerHTML = this.config.foo;
-        var subElement = document.createElement("p");
-        subElement.id = "COUNT";
-        wrapper.appendChild(subElement);
-        // return wrapper;
 
         for(var i = 0; i<this.calendarData.length; i++){
           var entry = this.calendarData[i];
@@ -84,7 +79,6 @@ Module.register("MMM-RecyclingCalendar", {
           wrapper.appendChild(entriesContainer);
         }
 
-        return wrapper; 
-
+        return wrapper;
       },
   })
