@@ -72,7 +72,7 @@ Module.register("MMM-RecyclingCalendar", {
 
       // var now = dayjs(); 
       var date = entry['date'];
-      var dt = moment(date, 'DD-MM-YYYY');
+      var dt = moment(date, 'dd mm yyyy');
       // console.log(dt);
 
       // add date 
