@@ -14,7 +14,7 @@ Module.register("MMM-RecyclingCalendar", {
   
   // define required scripts
   getScripts: function () {
-    return ["moment.js"];
+    return ["luxon"];
   },
     
   start: function (){ // is executed when module is loaded successfully 
@@ -68,6 +68,9 @@ Module.register("MMM-RecyclingCalendar", {
 
           var entriesContainer = document.createElement("div");
           entriesContainer.classList.add("entries-container");
+
+          var dt = DateTime.local();
+          Log.log("DATETIME: "+dt);
 
           // add date 
           var dateEntry = document.createElement("span");
