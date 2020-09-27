@@ -25,31 +25,6 @@ Module.register("MMM-RecyclingCalendar", {
         // }, 1000)
       },
 
-      getDom: function() {
-        var wrapper = document.createElement("div");
-        wrapper.innerHTML = this.config.foo;
-        var subElement = document.createElement("p");
-        subElement.id = "COUNT";
-        wrapper.appendChild(subElement);
-        // return wrapper;
-
-        for(var i = 0; i<this.calendarData.length; i++){
-          var entry = this.calendarData[i];
-
-          var entriesContainer = document.createElement("div");
-
-          var listEntry = document.createElement("span");
-          listEntry.innerHTML = entry['type'];
-
-          entriesContainer.appendChild(listEntry);
-
-          wrapper.appendChild(entriesContainer);
-        }
-
-        return wrapper; 
-
-      },
-
       getTestFunction: function(){
         this.sendSocketNotification('CALENDAR_GET', this.config);
       },
@@ -75,13 +50,12 @@ Module.register("MMM-RecyclingCalendar", {
       socketNotificationReceived: function(notification, payload) {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-        if(notification === "CALENDAR_RESULT"){
+        if(notification === "CALENDAR_RESULT" && payload.length > 0){
           // var elem = document.getElementById("COUNT")
           // elem.innerHTML = payload;
-          // console.log(payload);
+          console.log(payload);
+          console.log("Payload length: "+payload.length);
           this.calendarData = payload;
-
-          console.log(this.calendarData.length);
           
 
           // for(var i = 0; i<this.calendarData.length; i++){
@@ -89,7 +63,7 @@ Module.register("MMM-RecyclingCalendar", {
           //   console.log(this.calendarData[i]['type']);
           // }
 
-          this.updateDom();
+          this.updateDom(1000);
         }
 
         // switch(notification) {
@@ -98,5 +72,30 @@ Module.register("MMM-RecyclingCalendar", {
         //     elem.innerHTML = payload;
         //     break
         // }
+      },
+
+      getDom: function() {
+        var wrapper = document.createElement("div");
+        wrapper.innerHTML = this.config.foo;
+        var subElement = document.createElement("p");
+        subElement.id = "COUNT";
+        wrapper.appendChild(subElement);
+        // return wrapper;
+
+        for(var i = 0; i<this.calendarData.length; i++){
+          var entry = this.calendarData[i];
+
+          var entriesContainer = document.createElement("div");
+
+          var listEntry = document.createElement("span");
+          listEntry.innerHTML = entry['type'];
+
+          entriesContainer.appendChild(listEntry);
+
+          wrapper.appendChild(entriesContainer);
+        }
+
+        return wrapper; 
+
       },
   })
