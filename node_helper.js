@@ -1,5 +1,6 @@
 var NodeHelper = require("node_helper");
 var { DateTime } = require('luxon');
+var fetch = require('node-fetch');
 
 module.exports = NodeHelper.create({
   start: function() {
