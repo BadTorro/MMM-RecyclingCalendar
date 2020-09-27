@@ -15,7 +15,7 @@ Module.register("MMM-RecyclingCalendar", {
   // define required scripts
   // TOOD: add luxon script 
   getScripts: function(){
-    return ["luxon"]
+    return ["dayjs"]
   },
     
   start: function (){ // is executed when module is loaded successfully 
@@ -70,7 +70,7 @@ Module.register("MMM-RecyclingCalendar", {
       var entriesContainer = document.createElement("div");
       entriesContainer.classList.add("entries-container");
 
-      var DateTime = luxon.DateTime;
+      var now = dayjs();
 
       // add date 
       var dateEntry = document.createElement("span");
