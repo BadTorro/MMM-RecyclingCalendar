@@ -20,6 +20,7 @@ module.exports = NodeHelper.create({
     params.append('zip', payload.zipCode);
     params.append('start', startdate);
     params.append('end', enddate);
+    params.append('sort', payload.sort);
 
     url.search = params.toString();
 

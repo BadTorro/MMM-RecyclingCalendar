@@ -5,6 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
         zipCode: 8047, 
         daysToDisplay: 7,  
         url: "http://openerz.metaodi.ch/api/calendar.json",
+        sort: "date"
       },
 
   // define required style sheets 
