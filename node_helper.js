@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
 
     http://openerz.metaodi.ch/api/calendar.json?zip=8047&start=2020-09-27&end=2020-10-04&offset=0&limit=0
 
-    const params = new URLSearchParams();
+    var params = new URLSearchParams();
     params.append('zip', payload.zipCode);
     params.append('start', startdate);
     params.append('end', enddate);
@@ -35,8 +35,8 @@ module.exports = NodeHelper.create({
     // });
 
     (async () => {
-      const response = await fetch(payload.url, {method: 'POST', body: params});
-      const json = await response.json();
+      var response = await fetch(payload.url, {method: 'POST', body: params});
+      var json = await response.json();
     
       console.log(json);
     })();
