@@ -13,6 +13,7 @@ Module.register("MMM-RecyclingCalendar", {
   },  
   
   // define required scripts
+  // TOOD: add luxon script 
   getScripts: function () {
     // return ["luxon"];
   },
@@ -68,9 +69,6 @@ Module.register("MMM-RecyclingCalendar", {
 
           var entriesContainer = document.createElement("div");
           entriesContainer.classList.add("entries-container");
-
-          // var dt = DateTime.local();
-          // console.log("DATETIME: "+dt);
 
           // add date 
           var dateEntry = document.createElement("span");
