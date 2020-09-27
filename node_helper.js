@@ -28,26 +28,31 @@ module.exports = NodeHelper.create({
 
     url.search = params.toString();
 
-    var result = "test"; 
-    (async () => {
-      try {
-        var response = await fetch(url, {
-          method: 'GET', 
-          headers: {'Content-Type': 'application/json'}, 
-        });
-
-        var json = await response.json();
-      } catch (error){
-        console.log(error);
-      }
-         
-      console.log(json);
-      result = json;
-    })();
+    var result = fetchData(url);
+    // (async () => {
+     
+    // })();
 
     this.sendSocketNotification('CALENDAR_RESULT', result);
 
   },
+
+  fetchData: async function (url){
+    try {
+      var response = await fetch(url, {
+        method: 'GET', 
+        headers: {'Content-Type': 'application/json'}, 
+      });
+
+      var json = await response.json();
+    } catch (error){
+      console.log(error);
+    }
+       
+    console.log(json);
+    return json; 
+  },
+
 
   socketNotificationReceived: function(notification, payload) {
     console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
