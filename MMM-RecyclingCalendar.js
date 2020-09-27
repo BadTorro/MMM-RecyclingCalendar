@@ -51,8 +51,8 @@ Module.register("MMM-RecyclingCalendar", {
         Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
         if(notification == "CALENDAR_RESULT" && payload.length > 0){
-          console.log(payload);
-          console.log("Payload length: "+payload.length);
+          Log.log(payload);
+          Log.log("Payload length: "+payload.length);
           this.calendarData = payload;
           
 
