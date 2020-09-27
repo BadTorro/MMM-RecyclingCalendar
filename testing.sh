@@ -5,5 +5,5 @@ cd "/Users/andreaspfeifer/Documents/GitHub/Docker/magicmirror/mounts/modules/MMM
 # git checkout getCalendarWeekData
 # git checkout master
 git pull
-# cd "/Users/andreaspfeifer/Documents/GitHub/Docker/magicmirror/run"
-# docker-compose up -d
+cd "/Users/andreaspfeifer/Documents/GitHub/Docker/magicmirror/run"
+docker-compose up -d
