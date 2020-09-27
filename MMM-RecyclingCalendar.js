@@ -71,16 +71,17 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.classList.add("entries-container");
 
       // var now = dayjs(); 
-      var date = entry['date'];
-      var dt = moment(date, 'YYYY-MM-DD');
-      dt = dt.format('DD-MM-YYYY');
+      // var date = entry['date'];
+      // var dt = moment(date, 'YYYY-MM-DD');
+      // dt = dt.format('DD-MM-YYYY');
       // console.log(dt);
 
       // add date 
       var dateEntry = document.createElement("span");
       dateEntry.classList.add("entry-date");
-      // dateEntry.innerHTML = entry['date'];
-      dateEntry.innerHTML = dt;
+      var date = entry['date'];
+      date = moment(date, 'YYYY-MM-DD').format('DD-MM-YYYY');
+      dateEntry.innerHTML = date;
       entriesContainer.appendChild(dateEntry);
 
       // add type 
