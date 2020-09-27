@@ -35,7 +35,7 @@ module.exports = NodeHelper.create({
     // });
 
     (async () => {
-      var response = await fetch(payload.url, {method: 'POST', body: params});
+      var response = await fetch(payload.url, {method: 'GET', body: params});
       var json = await response.json();
     
       console.log(json);
