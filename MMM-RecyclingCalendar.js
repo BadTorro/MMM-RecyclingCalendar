@@ -70,12 +70,6 @@ Module.register("MMM-RecyclingCalendar", {
       var entriesContainer = document.createElement("div");
       entriesContainer.classList.add("entries-container");
 
-      // var now = dayjs(); 
-      // var date = entry['date'];
-      // var dt = moment(date, 'YYYY-MM-DD');
-      // dt = dt.format('DD-MM-YYYY');
-      // console.log(dt);
-
       // add date 
       var dateEntry = document.createElement("span");
       dateEntry.classList.add("entry-date");

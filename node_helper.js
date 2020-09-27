@@ -1,5 +1,6 @@
 const NodeHelper = require("node_helper");
-const { DateTime } = require('luxon');
+const moment = require("moment");
+// const { DateTime } = require('luxon');
 const fetch = require('node-fetch');
 
 module.exports = NodeHelper.create({
@@ -16,8 +17,11 @@ module.exports = NodeHelper.create({
     
     // console.log("Data: " + data.daysToDisplay);
 
-    var startdate = DateTime.local().toISODate();
-    var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
+    var startdate = moment().format('YYYY-MM-DD');
+    console.log(startdate);
+
+    // var startdate = DateTime.local().toISODate();
+    // var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
 
     var url = new URL(payload.url);
 
