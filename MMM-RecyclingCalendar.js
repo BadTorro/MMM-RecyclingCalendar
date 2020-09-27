@@ -7,7 +7,11 @@ Module.register("MMM-RecyclingCalendar", {
         url: "http://openerz.metaodi.ch/api/calendar.json",
       },
 
-    start: function (){ // is executed when module is loaded successfully 
+  getStyles: function () {
+    return ["MMM-RecyclingCalendar.css"];
+  },  
+    
+  start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
         // this.test = "aus ";
@@ -67,11 +71,15 @@ Module.register("MMM-RecyclingCalendar", {
           var entry = this.calendarData[i];
 
           var entriesContainer = document.createElement("div");
+          entriesContainer.classList.add("entries-Container");
 
+          // add date 
           var dateEntry = document.createElement("span");
+          dateEntry.classList.add("entry-Date");
           dateEntry.innerHTML = entry['date'];
           entriesContainer.appendChild(dateEntry);
 
+          // add type 
           var typeEntry = document.createElement("span");
           typeEntry.innerHTML = entry['type'];
           entriesContainer.appendChild(typeEntry);
