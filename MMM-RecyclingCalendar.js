@@ -78,7 +78,7 @@ Module.register("MMM-RecyclingCalendar", {
         if(notification === "CALENDAR_RESULT"){
           // var elem = document.getElementById("COUNT")
           // elem.innerHTML = payload;
-          console.log(payload);
+          console.log("hi");
           this.calendarData = payload;
 
           for(var i = 0; i<this.calendarData.length; i++){
