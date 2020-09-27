@@ -10,14 +10,13 @@ module.exports = NodeHelper.create({
     // result = data + "die maus";
     // this.sendSocketNotification('CALENDAR_RESULT', result);
 
-    var curDate = DateTime.local();
-    var dt = DateTime.fromISO(curDate);
-    console.log("DATE " + dt);
+    var now = DateTime.local().toString();
+    // console.log("DATE " + dt);
 
     // var startdate = DateTime.local();
     // result = startdate; 
-    // console.log("RESULT: " + result);
-    result = dt; 
+    result = now;
+    console.log("RESULT: " + result);
     this.sendSocketNotification('CALENDAR_RESULT', result);
     // set start date = today 
     // set end date = today + 7 days 

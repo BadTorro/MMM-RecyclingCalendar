@@ -6,4 +6,4 @@ cd "/Users/andreaspfeifer/Documents/GitHub/Docker/magicmirror/mounts/modules/MMM
 # git checkout master
 git pull
 cd "/Users/andreaspfeifer/Documents/GitHub/Docker/magicmirror/run"
-docker-compose up -d
+docker-compose up
