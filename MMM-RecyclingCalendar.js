@@ -1,13 +1,17 @@
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
-        foo: "I'm alive!"
+        foo: "I'm alive!",
+        zipCode: 8047, 
+        weekToDisplay: 1, 
+        url = "http://openerz.metaodi.ch/api/calendar.json",
       },
 
     start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
         this.test = "aus ";
+
         
         this.getTestFunction();
 

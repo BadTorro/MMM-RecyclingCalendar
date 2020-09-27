@@ -1,4 +1,5 @@
 var NodeHelper = require("node_helper");
+var { DateTime } = require('luxon');
 
 module.exports = NodeHelper.create({
   start: function() {
@@ -6,8 +7,14 @@ module.exports = NodeHelper.create({
   },
 
   getData: function(data){
-    result = data + "die maus";
-    this.sendSocketNotification('CALENDAR_RESULT', result);
+    // result = data + "die maus";
+    // this.sendSocketNotification('CALENDAR_RESULT', result);
+
+    startdate = DateTime.local();
+    this.sendSocketNotification('CALENDAR_RESULT', startdate);
+    // set start date = today 
+    // set end date = today + 7 days 
+
   },
 
   socketNotificationReceived: function(notification, payload) {
