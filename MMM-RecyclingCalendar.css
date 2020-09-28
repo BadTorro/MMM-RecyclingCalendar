@@ -21,7 +21,7 @@
     line-height: 24px;
   }
   
-.MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon {
+.MMM-RecyclingCalendar .entries-container .entry-icon-container {
     width: 24px;
     height: 24px;
     fill: currentColor;
@@ -33,8 +33,8 @@
 }
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.organic {
-    /* fill: #3499D4; */
-    background-image: url("icons/trash.svg");
+    fill: #3499D4;
+    background-image: url("icons/trash.svg");   
 }
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.waste {
