@@ -33,6 +33,17 @@ Recycling calender for stadt zuerich
   </thead>
   <tbody>
     <tr>
+        <td><code>showDate</code></td>
+        <td>Select the type of how the dates should be shown.
+        <br /><br />
+        <strong>Default values: </strong><code>daysAndDate</code><br />
+        <strong>Possible values: <br /></strong>
+        <code>daysAndDate</code> - Shows recycling dates in format, e.g. Tuesday, DD.MM.YYYY<br />
+        <code>inDays</code> - Shows recycling dates in days, e.g. Tuesday<br />
+        <code>shortDate</code> - Shows recycling dates in format DD.MM.YYYY<br />
+        </td>
+    </tr>
+    <tr>
         <td><code>showType</code></td>
         <td>Select the type of recycling setting to show.
         <br /><br />

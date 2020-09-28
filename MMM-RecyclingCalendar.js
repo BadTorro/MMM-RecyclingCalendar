@@ -5,7 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
     daysToDisplay: 7,  
     url: "http://openerz.metaodi.ch/api/",
     sort: "date",
-    showDate: "shortDate",
+    showDate: "daysAndDate",
     showType: "general", 
   },
   
@@ -16,7 +16,6 @@ Module.register("MMM-RecyclingCalendar", {
   },  
   
   // define required scripts
-  // TOOD: add luxon script 
   getScripts: function(){
     return ["moment.js"]
   },
@@ -67,17 +66,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   // TODO: add color images
   svgIconFactory: function(type) {
-
-    console.log("SUBMITTED TYPE: "+type);
-
-    // type = "compost";
-    // var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    // svg.setAttributeNS(null, "class", "entry-icon " + type);
-    // var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    // use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("/icons/icon_sprite.svg#") + type);
-    // svg.appendChild(use);
-    
-    // return(svg);
+   
     // type = "etram";
   
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
@@ -123,16 +112,13 @@ Module.register("MMM-RecyclingCalendar", {
         case 'shortDate':
           date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
+        case 'daysAndDate':
+          date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
+          break;
       }
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
-
-      // add type 
-      // var typeEntry = document.createElement("span");
-      // typeEntry.classList.add("entry-type");
-      // typeEntry.innerHTML = entry['type'];
-      // entriesContainer.appendChild(typeEntry);
-    
+          
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container");
