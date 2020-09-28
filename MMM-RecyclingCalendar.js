@@ -68,6 +68,12 @@ Module.register("MMM-RecyclingCalendar", {
   getDom: function() {
     var wrapper = document.createElement("div");
 
+    if(this.calendarData.length == 0){
+      wrapper.innerHTML = "No results"; 
+      wrapper.className = "light small"; 
+      return wrapper; 
+    }
+
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 

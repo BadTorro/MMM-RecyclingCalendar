@@ -8,9 +8,6 @@ module.exports = NodeHelper.create({
   },
 
   getCalendarData: function(payload){
-    // result = data + "die maus";
-    // this.sendSocketNotification('CALENDAR_RESULT', result);
-
     var startdate = moment().format('YYYY-MM-DD');
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
@@ -21,7 +18,6 @@ module.exports = NodeHelper.create({
       url = payload.url+"calendar/"+payload.showType+".json";
     }
 
-    console.log("URL: "+url);
     url = new URL(url);
 
     var params = new URLSearchParams();
@@ -44,7 +40,7 @@ module.exports = NodeHelper.create({
         console.log(error);
       }
          
-      // console.log(json); 
+      console.log(json); 
       this.sendSocketNotification('CALENDAR_RESULT', json);
 
     })();
