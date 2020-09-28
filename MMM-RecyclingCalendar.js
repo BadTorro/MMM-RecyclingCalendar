@@ -81,7 +81,7 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('dddd');
           break;
         case 'shortDate':
-          date = moment(date, 'YYYY-MM-DD').format('YY.MM.DDDD');
+          date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
       }
       dateEntry.innerHTML = date;
