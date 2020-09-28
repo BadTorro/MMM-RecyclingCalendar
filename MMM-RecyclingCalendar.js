@@ -4,7 +4,8 @@ Module.register("MMM-RecyclingCalendar", {
         zipCode: 8047, 
         daysToDisplay: 7,  
         url: "http://openerz.metaodi.ch/api/calendar.json",
-        sort: "date"
+        sort: "date",
+        showDate: "inDays",
       },
 
   // define required style sheets 
@@ -75,7 +76,14 @@ Module.register("MMM-RecyclingCalendar", {
       var dateEntry = document.createElement("span");
       dateEntry.classList.add("entry-date");
       var date = entry['date'];
-      date = moment(date, 'YYYY-MM-DD').format('dddd');
+      switch(this.config.showDate){
+        case inDays: 
+          date = moment(date, 'YYYY-MM-DD').format('dddd');
+          break;
+        case shortDate:
+          date = moment(date, 'YYYY-MM-DD').format('YY.MM.DDDD');
+          break; 
+      }
       dateEntry.innerHTML = date;
       entriesContainer.appendChild(dateEntry);
 
