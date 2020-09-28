@@ -5,7 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
         daysToDisplay: 7,  
         url: "http://openerz.metaodi.ch/api/calendar.json",
         sort: "date",
-        showDate: "inDays",
+        showDate: "shortDate",
       },
 
   // define required style sheets 
