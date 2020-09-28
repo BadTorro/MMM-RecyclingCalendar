@@ -26,7 +26,7 @@
     height: 24px;
     fill: currentColor;
     vertical-align: bottom;
-    /* display: inline; */
+    display: inline;
     position: relative;
     margin-left:4px;
 }
@@ -37,4 +37,5 @@
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.waste {
     fill: #C2A36E;
+    background-size: 24px 24px;
 }
