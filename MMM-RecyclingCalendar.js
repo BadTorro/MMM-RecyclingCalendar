@@ -6,7 +6,7 @@ Module.register("MMM-RecyclingCalendar", {
     url: "http://openerz.metaodi.ch/api/",
     sort: "date",
     showDate: "shortDate",
-    showType: "etram", 
+    showType: "general", 
   },
   
 
