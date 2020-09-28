@@ -67,13 +67,28 @@ Module.register("MMM-RecyclingCalendar", {
 
   svgIconFactory: function(type) {
 
-    var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    svg.setAttributeNS(null, "class", "entry-icon " + type);
-    var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttributeNS(null, "class", "entry-icon");
+    //Switch for Legacy files
+    switch (type) {
+      case 'organic':
+        svg.setAttributeNS(null, "style", "fill: #00A651");
+        break;
+      case 'GarbageBin':
+        svg.setAttributeNS(null, "style", "fill: #787878" );
+        break;
+      case 'PaperBin':
+        svg.setAttributeNS(null, "style", "fill: #0059ff");
+        break;
+      default:
+        svg.setAttributeNS(null, "style", "fill: " + color);
+        break;
+    }
+    var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/garbage_icons.svg#bin"));
     svg.appendChild(use);
-    
-    return(svg);
+    return (svg);
+
   },
 
   getDom: function() {
@@ -99,8 +114,8 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.classList.add("entries-container");
 
       // add date 
-      var dateEntry = document.createElement("span");
-      dateEntry.classList.add("entry-date");
+      var dateContainer = document.createElement("span");
+      dateContainer.classList.add("entry-date");
       var date = entry['date'];
       switch(this.config.showDate){
         case 'inDays': 
@@ -110,8 +125,8 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
       }
-      dateEntry.innerHTML = date;
-      entriesContainer.appendChild(dateEntry);
+      dateContainer.innerHTML = date;
+      entriesContainer.appendChild(dateContainer);
 
       // add type 
       // var typeEntry = document.createElement("span");
@@ -120,16 +135,16 @@ Module.register("MMM-RecyclingCalendar", {
       // entriesContainer.appendChild(typeEntry);
     
       // add icon
-      var iconEntry = document.createElement("span");
-      iconEntry.classList.add("entry-icon-container");
+      var iconContainer = document.createElement("span");
+      iconContainer.classList.add("entry-icon-container");
 
       switch(entry['type']){
         case 'organic':
-          iconEntry.appendChild(this.svgIconFactory("organic"));
+          iconContainer.appendChild(this.svgIconFactory(entry['type']));
           break;
       }
 
-      entriesContainer.appendChild(iconEntry);
+      entriesContainer.appendChild(iconContainer);
 
       wrapper.appendChild(entriesContainer);
     }
