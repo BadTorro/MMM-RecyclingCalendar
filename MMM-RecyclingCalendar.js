@@ -102,6 +102,8 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
+    console.log("calendardata.length "+this.calendarData.length);
+    
     if(this.calendarData.length == 0){
       wrapper.innerHTML = "No results"; 
       wrapper.className = "light small"; 
