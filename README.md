@@ -33,6 +33,15 @@ Recycling calender for stadt zuerich
   </thead>
   <tbody>
     <tr>
+        <td><code>zipCode</code></td>
+        <td>Enter the zipCode of Zurich region you want to display 
+        <br /><br />
+        <strong>Default values: </strong><code>4 digit zip code</code><br />
+        <strong>Possible values:</strong>
+        <code>numbers</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>daysToDisplay</code></td>
         <td>Enter the number of days recycling dates should be shown. 
         <br /><br />
@@ -78,4 +87,7 @@ Recycling calender for stadt zuerich
 
 ## Open Todos: 
 - add color icons
-
+- show stations for tram results 
+- show explanation for symbols 
+- more sophisticated error handling? 
+- add sort possiblities --> Currently sort by date 

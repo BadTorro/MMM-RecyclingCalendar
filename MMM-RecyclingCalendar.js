@@ -54,6 +54,9 @@ Module.register("MMM-RecyclingCalendar", {
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
+    console.log("payload length: "+payload['result'].length);
+
+    // TODO: Error handling, if payload = empty 
     if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
       // Log.log(payload['result']);
       // Log.log("Payload length: "+payload['result'].length);
@@ -66,7 +69,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   // TODO: add color images
   svgIconFactory: function(type) {
-    
+ 
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
@@ -87,6 +90,7 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
+    // TODO: not showing when calendarData.length == 0
     if(this.calendarData.length == 0){
       wrapper.innerHTML = "No results"; 
       wrapper.className = "light small"; 
@@ -116,7 +120,7 @@ Module.register("MMM-RecyclingCalendar", {
       }
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
-          
+
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container");
