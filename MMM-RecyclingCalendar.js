@@ -81,7 +81,7 @@ Module.register("MMM-RecyclingCalendar", {
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/can.svg#") + type);
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
     svg.appendChild(use);
     
     return(svg);
