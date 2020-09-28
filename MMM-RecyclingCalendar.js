@@ -67,7 +67,8 @@ Module.register("MMM-RecyclingCalendar", {
 
   svgIconFactory: function(type) {
 
-    console.log("SUBMITTED TYPE: "+type);
+    // console.log("SUBMITTED TYPE: "+type);
+    
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttributeNS(null, "class", "entry-icon");
     //Switch for Legacy files
@@ -86,7 +87,7 @@ Module.register("MMM-RecyclingCalendar", {
         break;
     }
     var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("/icons/garbage_icons.svg#bin"));
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("garbage_icons.svg#bin"));
     svg.appendChild(use);
     return (svg);
 
