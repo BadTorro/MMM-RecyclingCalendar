@@ -1,11 +1,14 @@
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
-        foo: "I'm alive!",
-        zipCode: 8047, 
-        daysToDisplay: 7,  
-        url: "http://openerz.metaodi.ch/api/calendar.json",
-      },
+    zipCode: 8047, 
+    daysToDisplay: 7,  
+    url: "http://openerz.metaodi.ch/api/",
+    sort: "date",
+    showDate: "shortDate",
+    showType: "general", 
+  },
+  
 
   // define required style sheets 
   getStyles: function () {
@@ -14,11 +17,15 @@ Module.register("MMM-RecyclingCalendar", {
   
   // define required scripts
   // TOOD: add luxon script 
+  getScripts: function(){
+    return ["moment.js"]
+  },
     
   start: function (){ // is executed when module is loaded successfully 
         Log.info('Starting module: ' + this.name);
 
         this.calendarData = [];
+        this.init = true;
       
         this.getRecyclingData();
       },
@@ -58,8 +65,36 @@ Module.register("MMM-RecyclingCalendar", {
 
   },
 
+  svgIconFactory: function(type) {
+
+    // console.log("SUBMITTED TYPE: "+type);
+
+    type = "compost";
+    var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    svg.setAttributeNS(null, "class", "entry-icon " + type);
+    var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icon_sprite.svg#") + type);
+    svg.appendChild(use);
+    
+    return(svg);
+
+  },
+
   getDom: function() {
     var wrapper = document.createElement("div");
+
+    if(this.init == true){
+      wrapper.innerHTML = "Fetching results..."; 
+      wrapper.className = "dimmed light small"; 
+      this.init = false; 
+      return wrapper; 
+    }
+
+    if(this.calendarData.length == 0){
+      wrapper.innerHTML = "No results"; 
+      wrapper.className = "light small"; 
+      return wrapper; 
+    }
 
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
@@ -68,16 +103,31 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.classList.add("entries-container");
 
       // add date 
-      var dateEntry = document.createElement("span");
-      dateEntry.classList.add("entry-date");
-      dateEntry.innerHTML = entry['date'];
-      entriesContainer.appendChild(dateEntry);
+      var dateContainer = document.createElement("span");
+      dateContainer.classList.add("entry-date");
+      var date = entry['date'];
+      switch(this.config.showDate){
+        case 'inDays': 
+          date = moment(date, 'YYYY-MM-DD').format('dddd');
+          break;
+        case 'shortDate':
+          date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
+          break; 
+      }
+      dateContainer.innerHTML = date;
+      entriesContainer.appendChild(dateContainer);
 
       // add type 
-      var typeEntry = document.createElement("span");
-      typeEntry.classList.add("entry-type");
-      typeEntry.innerHTML = entry['type'];
-      entriesContainer.appendChild(typeEntry);
+      // var typeEntry = document.createElement("span");
+      // typeEntry.classList.add("entry-type");
+      // typeEntry.innerHTML = entry['type'];
+      // entriesContainer.appendChild(typeEntry);
+    
+      // add icon for type 
+      var iconContainer = document.createElement("span");
+      iconContainer.classList.add("entry-icon-container");
+      iconContainer.appendChild(this.svgIconFactory(entry['type']));
+      entriesContainer.appendChild(iconContainer);
 
       wrapper.appendChild(entriesContainer);
     }

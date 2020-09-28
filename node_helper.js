@@ -1,5 +1,5 @@
 const NodeHelper = require("node_helper");
-const { DateTime } = require('luxon');
+const moment = require("moment");
 const fetch = require('node-fetch');
 
 module.exports = NodeHelper.create({
@@ -8,23 +8,23 @@ module.exports = NodeHelper.create({
   },
 
   getCalendarData: function(payload){
-    // result = data + "die maus";
-    // this.sendSocketNotification('CALENDAR_RESULT', result);
+    var startdate = moment().format('YYYY-MM-DD');
+    var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
-    // var dt = DateTime.local();
-    // var startdate = dt.toISODate();
-    
-    // console.log("Data: " + data.daysToDisplay);
+    var url;
+    if(payload.showType == 'general'){
+      url = payload.url+"calendar.json"; 
+    } else {
+      url = payload.url+"calendar/"+payload.showType+".json";
+    }
 
-    var startdate = DateTime.local().toISODate();
-    var enddate = DateTime.local().plus({ days: payload.daysToDisplay }).toISODate();
-
-    var url = new URL(payload.url);
+    url = new URL(url);
 
     var params = new URLSearchParams();
     params.append('zip', payload.zipCode);
     params.append('start', startdate);
     params.append('end', enddate);
+    params.append('sort', payload.sort);
 
     url.search = params.toString();
 
@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
         console.log(error);
       }
          
-      // console.log(json); 
+      console.log(json); 
       this.sendSocketNotification('CALENDAR_RESULT', json);
 
     })();
