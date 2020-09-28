@@ -70,19 +70,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   // TODO: add color images
   svgIconFactory: function(type) {
-
-    console.log("SUBMITTED TYPE: "+type);
-
-    // type = "compost";
-    // var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    // svg.setAttributeNS(null, "class", "entry-icon " + type);
-    // var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    // use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("/icons/icon_sprite.svg#") + type);
-    // svg.appendChild(use);
-    
-    // return(svg);
-    // type = "etram";
-  
+ 
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
@@ -127,6 +115,9 @@ Module.register("MMM-RecyclingCalendar", {
         case 'shortDate':
           date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
+        case 'daysAndDate':
+          date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
+          break;
       }
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
