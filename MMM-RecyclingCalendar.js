@@ -78,7 +78,7 @@ Module.register("MMM-RecyclingCalendar", {
     // svg.appendChild(use);
     
     // return(svg);
-    type = "textile";
+    type = "etram";
   
 
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
