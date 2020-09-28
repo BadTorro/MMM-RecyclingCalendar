@@ -5,7 +5,7 @@ Module.register("MMM-RecyclingCalendar", {
     daysToDisplay: 7,  
     url: "http://openerz.metaodi.ch/api/",
     sort: "date",
-    showDate: "inDays",
+    showDate: "daysAndDate",
     showType: "general", 
   },
   
@@ -112,6 +112,9 @@ Module.register("MMM-RecyclingCalendar", {
         case 'shortDate':
           date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
+        case 'daysAndDate':
+          date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
+          break;
       }
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
