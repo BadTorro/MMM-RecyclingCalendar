@@ -25,6 +25,7 @@ Module.register("MMM-RecyclingCalendar", {
         Log.info('Starting module: ' + this.name);
 
         this.calendarData = [];
+        this.init = true;
       
         this.getRecyclingData();
       },
@@ -67,6 +68,13 @@ Module.register("MMM-RecyclingCalendar", {
   // TODO: #1 make wider appearance of calendar 
   getDom: function() {
     var wrapper = document.createElement("div");
+
+    if(this.init == true){
+      wrapper.innerHTML = "Fetching results..."; 
+      wrapper.className = "dimmed light small"; 
+      this.init = false; 
+      return wrapper; 
+    }
 
     if(this.calendarData.length == 0){
       wrapper.innerHTML = "No results"; 
