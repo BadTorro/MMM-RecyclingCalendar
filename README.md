@@ -47,9 +47,9 @@ Recycling calender for stadt zuerich
     <tr>
         <td><code>showType</code></td>
         <td>Select the type of recycling setting to show.
-        <br>Possible values: 
-        <code>general</code>: Shows any recycling this week.<br>
-        <code>cardboard</code>: Shows cardboard recycling this week.<br>
+        <br />Possible values:<br /> 
+        <code>general</code>: Shows any recycling this week.<br />
+        <code>cardboard</code>: Shows cardboard recycling this week.<br />
         </td>
     </tr>
   </tbody>
