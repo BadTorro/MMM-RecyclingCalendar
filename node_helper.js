@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
     if(payload.showType == 'general'){
       url = payload.url+"calendar.json"; 
     } else {
-      url = payload.url+"/calendar/"+payload.showType+".json";
+      url = payload.url+"calendar/"+payload.showType+".json";
     }
 
     console.log("URL: "+url);
