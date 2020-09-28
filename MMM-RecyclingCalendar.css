@@ -1,5 +1,5 @@
 .MMM-RecyclingCalendar .entries-container {
-    /* width: 200px; */
+    width: 200px;
     line-height: 1.75;
     font-size: 18px;
     margin: 0;
@@ -34,4 +34,8 @@
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.organic {
     fill: #3499D4;
+}
+
+.MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.waste {
+    fill: #C2A36E;
 }
