@@ -47,10 +47,9 @@
     fill: #3499D4;
     border: 1px solid; 
 }
-.MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.metal {
-    /* fill: #3499D4; */
-    border: 1px solid; 
-}
+/* .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.metal {
+
+} */
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.organic {
     fill: #3499D4;
     border: 1px solid; 
