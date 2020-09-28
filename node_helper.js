@@ -14,7 +14,15 @@ module.exports = NodeHelper.create({
     var startdate = moment().format('YYYY-MM-DD');
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
-    var url = new URL(payload.url);
+    var url;
+    if(payload.showType == 'general'){
+      url = payload.url+"calendar.json"; 
+    } else {
+      url = payload.url+"/calendar/"+payload.showType+".json";
+    }
+
+    console.log("URL: "+url);
+    url = new URL(url);
 
     var params = new URLSearchParams();
     params.append('zip', payload.zipCode);
