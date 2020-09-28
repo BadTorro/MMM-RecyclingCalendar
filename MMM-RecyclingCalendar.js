@@ -1,7 +1,6 @@
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
-        foo: "I'm alive!",
         zipCode: 8047, 
         daysToDisplay: 7,  
         url: "http://openerz.metaodi.ch/api/calendar.json",
@@ -76,7 +75,7 @@ Module.register("MMM-RecyclingCalendar", {
       var dateEntry = document.createElement("span");
       dateEntry.classList.add("entry-date");
       var date = entry['date'];
-      date = moment(date, 'YYYY-MM-DD').format('DD-MM-YYYY');
+      date = moment(date, 'YYYY-MM-DD').format('DD MM YYYY');
       dateEntry.innerHTML = date;
       entriesContainer.appendChild(dateEntry);
 
