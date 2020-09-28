@@ -22,8 +22,8 @@
   }
   
 .MMM-RecyclingCalendar .entries-container .entry-icon-container {
-    width: 24px;
-    height: 24px;
+    /* width: 24px;
+    height: 24px; */
     fill: currentColor;
     vertical-align: bottom;
     display: inline;
