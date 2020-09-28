@@ -75,7 +75,7 @@ Module.register("MMM-RecyclingCalendar", {
       var dateEntry = document.createElement("span");
       dateEntry.classList.add("entry-date");
       var date = entry['date'];
-      date = moment(date, 'YYYY-MM-DD').format('LLLL');
+      date = moment(date, 'YYYY-MM-DD').format('DD');
       dateEntry.innerHTML = date;
       entriesContainer.appendChild(dateEntry);
 
