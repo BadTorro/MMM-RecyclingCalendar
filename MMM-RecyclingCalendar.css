@@ -29,6 +29,7 @@
     display: inline;
     position: relative;
     margin-left:4px;
+    background-size: 24px 24px;
 }
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.organic {
@@ -37,5 +38,4 @@
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.waste {
     fill: #C2A36E;
-    background-size: 24px 24px;
 }
