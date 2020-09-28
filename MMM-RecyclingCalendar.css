@@ -13,7 +13,7 @@
     color: #FFF;
 }
 
-.MMM-MyGarbage .entries-container .entry-icon-container {
+.MMM-RecyclingCalendar .entries-container .entry-icon-container {
     white-space: nowrap;
     position: absolute;
     right : 0px;
@@ -21,7 +21,7 @@
     line-height: 24px;
   }
   
-  .MMM-MyGarbage .entries-container .entry-icon-container .entry-icon {
+  .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon {
     width: 24px;
     height: 24px;
     fill: currentColor;
