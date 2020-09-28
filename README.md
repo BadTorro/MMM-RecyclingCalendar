@@ -23,7 +23,7 @@ Recycling calender for stadt zuerich
 - Default value of weeks to show: weeksToDisplay 
 - Show each day with recycling activity within those 7 days 
 
-## Types of waste to show 
+## Configuration options
 <table>
   <thead>
     <tr>
