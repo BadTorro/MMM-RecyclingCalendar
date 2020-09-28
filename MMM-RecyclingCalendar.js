@@ -67,6 +67,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   svgIconFactory: function(type) {
 
+    console.log("SUBMITTED TYPE: "+type);
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttributeNS(null, "class", "entry-icon");
     //Switch for Legacy files
