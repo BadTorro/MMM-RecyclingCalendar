@@ -21,7 +21,7 @@
     line-height: 24px;
   }
   
-  .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon {
+.MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon {
     width: 24px;
     height: 24px;
     fill: currentColor;
@@ -29,4 +29,8 @@
     display: inline;
     position: relative;
     margin-left:4px;
-  }
+}
+
+.MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.organic {
+    fill: #3499D4;
+}

@@ -69,27 +69,13 @@ Module.register("MMM-RecyclingCalendar", {
 
     // console.log("SUBMITTED TYPE: "+type);
 
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttributeNS(null, "class", "entry-icon");
-    //Switch for Legacy files
-    switch (type) {
-      case 'organic':
-        svg.setAttributeNS(null, "style", "fill: #00A651");
-        break;
-      case 'GarbageBin':
-        svg.setAttributeNS(null, "style", "fill: #787878" );
-        break;
-      case 'PaperBin':
-        svg.setAttributeNS(null, "style", "fill: #0059ff");
-        break;
-      // default:
-      //   svg.setAttributeNS(null, "style", "fill: " + color);
-      //   break;
-    }
-    var use = document.createElementNS('http://www.w3.org/2000/svg', "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("garbage_icons.svg#bin"));
+    var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    svg.setAttributeNS(null, "class", "entry-icon" + type);
+    var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icon_sprite.svg#") + type);
     svg.appendChild(use);
-    return (svg);
+    
+    return(svg);
 
   },
 
