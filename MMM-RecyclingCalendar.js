@@ -69,7 +69,7 @@ Module.register("MMM-RecyclingCalendar", {
 
     // console.log("SUBMITTED TYPE: "+type);
 
-    type = "Capa_1";
+    type = "trash";
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
