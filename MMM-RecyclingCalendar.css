@@ -1,5 +1,5 @@
 .MMM-RecyclingCalendar .entries-container {
-    width: 100%;
+    width: 200px;
     line-height: 1.75;
     font-size: 18px;
     margin: 0;
@@ -28,7 +28,7 @@
     vertical-align: bottom;
     display: inline;
     position: relative;
-    margin-left:8px;
+    margin-left:4px;
 }
 
 /* .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.general {
