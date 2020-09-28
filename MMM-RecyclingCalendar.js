@@ -65,6 +65,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   },
 
+  // TODO: add color images
   svgIconFactory: function(type) {
 
     console.log("SUBMITTED TYPE: "+type);
@@ -77,8 +78,9 @@ Module.register("MMM-RecyclingCalendar", {
     // svg.appendChild(use);
     
     // return(svg);
-    // type = "metal";
-    // TODO: add color images
+    type = "paper";
+  
+
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
