@@ -77,10 +77,10 @@ Module.register("MMM-RecyclingCalendar", {
       dateEntry.classList.add("entry-date");
       var date = entry['date'];
       switch(this.config.showDate){
-        case inDays: 
+        case 'inDays': 
           date = moment(date, 'YYYY-MM-DD').format('dddd');
           break;
-        case shortDate:
+        case 'shortDate':
           date = moment(date, 'YYYY-MM-DD').format('YY.MM.DDDD');
           break; 
       }
