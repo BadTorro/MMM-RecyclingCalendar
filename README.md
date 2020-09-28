@@ -33,6 +33,15 @@ Recycling calender for stadt zuerich
   </thead>
   <tbody>
     <tr>
+        <td><code>daysToDisplay</code></td>
+        <td>Enter the number of days recycling dates should be shown. 
+        <br /><br />
+        <strong>Default values: </strong><code>7</code><br />
+        <strong>Possible values:</strong>
+        <code>numbers</code> - Shows recycling dates in format, e.g. Tuesday, DD.MM.YYYY<br />
+        </td>
+    </tr>
+    <tr>
         <td><code>showDate</code></td>
         <td>Select the type of how the dates should be shown.
         <br /><br />
@@ -63,3 +72,10 @@ Recycling calender for stadt zuerich
     </tr>
   </tbody>
 </table>
+
+## Icons: 
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+## Open Todos: 
+- add color icons
+

@@ -66,9 +66,7 @@ Module.register("MMM-RecyclingCalendar", {
 
   // TODO: add color images
   svgIconFactory: function(type) {
-   
-    // type = "etram";
-  
+    
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
