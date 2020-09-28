@@ -16,7 +16,6 @@ Module.register("MMM-RecyclingCalendar", {
   },  
   
   // define required scripts
-  // TOOD: add luxon script 
   getScripts: function(){
     return ["moment.js"]
   },
@@ -122,12 +121,6 @@ Module.register("MMM-RecyclingCalendar", {
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
 
-      // add type 
-      // var typeEntry = document.createElement("span");
-      // typeEntry.classList.add("entry-type");
-      // typeEntry.innerHTML = entry['type'];
-      // entriesContainer.appendChild(typeEntry);
-    
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container");
