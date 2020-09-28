@@ -38,7 +38,7 @@ Recycling calender for stadt zuerich
         <br /><br />
         <strong>Default values: </strong><code>7</code><br />
         <strong>Possible values:</strong>
-        <code>numbers</code> - Shows recycling dates in format, e.g. Tuesday, DD.MM.YYYY<br />
+        <code>numbers</code>
         </td>
     </tr>
     <tr>
