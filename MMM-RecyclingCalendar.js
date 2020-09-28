@@ -67,13 +67,22 @@ Module.register("MMM-RecyclingCalendar", {
 
   svgIconFactory: function(type) {
 
-    // console.log("SUBMITTED TYPE: "+type);
+    console.log("SUBMITTED TYPE: "+type);
 
-    type = "compost";
+    // type = "compost";
+    // var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    // svg.setAttributeNS(null, "class", "entry-icon " + type);
+    // var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    // use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icon_sprite.svg#") + type);
+    // svg.appendChild(use);
+    
+    // return(svg);
+
+    // type = "compost";
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icon_sprite.svg#") + type);
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("/icons/trash.svg#") + type);
     svg.appendChild(use);
     
     return(svg);
