@@ -64,7 +64,18 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
   },
-  
+
+  svgIconFactory: function(type) {
+
+    var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    svg.setAttributeNS(null, "class", "entry-icon " + type);
+    var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/trash.svg#") + type);
+    svg.appendChild(use);
+    
+    return(svg);
+  },
+
   getDom: function() {
     var wrapper = document.createElement("div");
 
@@ -103,10 +114,22 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.appendChild(dateEntry);
 
       // add type 
-      var typeEntry = document.createElement("span");
-      typeEntry.classList.add("entry-type");
-      typeEntry.innerHTML = entry['type'];
-      entriesContainer.appendChild(typeEntry);
+      // var typeEntry = document.createElement("span");
+      // typeEntry.classList.add("entry-type");
+      // typeEntry.innerHTML = entry['type'];
+      // entriesContainer.appendChild(typeEntry);
+    
+      // add icon
+      var iconEntry = document.createElement("span");
+      iconEntry.classList.add("entry-icon-container");
+
+      switch(entry['type']){
+        case 'organic':
+          iconEntry.appendChild(this.svgIconFactory("organic"));
+          break;
+      }
+
+      entriesContainer.appendChild(iconEntry);
 
       wrapper.appendChild(entriesContainer);
     }

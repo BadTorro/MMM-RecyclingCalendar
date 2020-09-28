@@ -13,10 +13,24 @@
     color: #FFF;
 }
 
-.MMM-RecyclingCalendar .entries-container .entry-type {
+.MMM-RecyclingCalendar .entries-container .entry-icon-container {
     white-space: nowrap;
     position: absolute;
     right : 0px;
     top: 6px;
     line-height: 24px;
   }
+
+.MMM-MyWastePickup .entries-container .entry-icon-container .entry-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    vertical-align: bottom;
+    display: inline;
+    position: relative;
+    margin-left:4px;
+}
+
+.MMM-MyWastePickup .entries-container .entry-icon-container .entry-icon.organic {
+    fill: #3499D4;
+}
