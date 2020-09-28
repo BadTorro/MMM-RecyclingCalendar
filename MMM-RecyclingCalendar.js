@@ -57,6 +57,7 @@ Module.register("MMM-RecyclingCalendar", {
 
     console.log("payload length: "+payload['result'].length);
 
+    // TODO: Error handling, if payload = empty 
     if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
       // Log.log(payload['result']);
       // Log.log("Payload length: "+payload['result'].length);
@@ -102,8 +103,7 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
-    console.log("calendardata.length "+this.calendarData.length);
-    
+    // TODO: not showing when calendarData.length == 0
     if(this.calendarData.length == 0){
       wrapper.innerHTML = "No results"; 
       wrapper.className = "light small"; 
