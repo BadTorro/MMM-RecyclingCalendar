@@ -22,3 +22,35 @@ Recycling calender for stadt zuerich
 - Shows recycling entries for current week 
 - Default value of weeks to show: weeksToDisplay 
 - Show each day with recycling activity within those 7 days 
+
+## Types of waste to show 
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>collectionCalendar</code></td>
+      <td><strong>REQUIRED</strong> The schedule for your curbside pickup, as dertmined above.<br><br><strong>String</strong> <code>Array</code><br />Valid values are <code>MondayNight</code>, <code>Tuesday1</code>, <code>Tuesday2</code>, <code>Wednesday1</code>, <code>Wednesday2</code>, <code>Thursday1</code>, <code>Thursday2</code>, <code>Friday1</code>, or <code>Friday2</code>.<br />It is also possible to specify <code>Custom</code> in case you want to use your own custom pickup schedule.  See below for more information about using your own schedule.<br /><br />Any other value will be ignored and the module will default to <code>Tuesday1</code>.</td>
+    </tr>
+    <tr>
+      <td><code>weeksToDisplay</code></td>
+      <td>How many weeks into the future to show collection dates.<br /><br /><strong>Number</strong><br />Default: <code>2</code>.</td>
+    </tr>
+    <tr>
+      <td><code>limitTo</code></td>
+      <td>Limit the display to the spcified number of pickups.<br /><br /><strong>Number</strong><br />Default: <code>99</code>.</td>
+    </tr>
+    <tr>
+        <td><code>showType</code></td>
+        <td>Select the type of recycling setting to show.
+        <br>Possible values: 
+        <code>general</code>: Shows any recycling this week.<br>
+        <code>cardboard</code>: Shows cardboard recycling this week.<br>
+        </td>
+    </tr>
+  </tbody>
+</table>
