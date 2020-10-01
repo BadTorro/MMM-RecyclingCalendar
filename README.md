@@ -88,7 +88,7 @@ Recycling calender for stadt zuerich
         <td>Shows the location of tram recycling stations (cargotrams & etrams)  
         <br /><br />
         <strong>Default values: </strong><code>false</code><br />
-        <strong>Possible values:</strong>
+        <strong>Possible values:</strong><br />
         <code>true</code> - Shows locations where given<br />
         <code>false</code> - Does not show any location details<br />
         </td>
