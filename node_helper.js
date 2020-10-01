@@ -17,7 +17,7 @@ module.exports = NodeHelper.create({
     // } else {
     //   url = payload.url+"calendar/"+payload.showType+".json";
     // }
-    url = payload.url+"calender.json";
+    url = payload.url+"calendar.json";
 
     url = new URL(url);
 
