@@ -61,8 +61,9 @@ Module.register("MMM-RecyclingCalendar", {
       Log.log(payload['result']);
       Log.log("Payload length: "+payload['result'].length);
       this.calendarData = payload['result'];    
-    } 
-    this.updateDom(1000);    
+    } else if (notification == "CALENDAR_ERROR"){
+      this.updateDom(1000);    
+    }
         
   },
 
