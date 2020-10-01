@@ -129,10 +129,9 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.appendChild(iconContainer);
 
       // add station 
-      if(this.config.showStations){
+      if(this.config.showStations && entry['station']){
         var stationContainer = document.createElement("div");
         stationContainer.className = "xsmall light";
-        console.log("location: "+entry['station']);
         stationContainer.innerHTML = entry['station'];
         entriesContainer.appendChild(stationContainer);  
       }
