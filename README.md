@@ -93,6 +93,16 @@ Recycling calender for stadt zuerich
         <code>false</code> - Does not show any location details<br />
         </td>
     </tr>
+     <tr>
+        <td><code>showExplanation</code></td>
+        <td>Shows the explanation of symbols
+        <br /><br />
+        <strong>Default values: </strong><code>false</code><br />
+        <strong>Possible values:</strong><br />
+        <code>true</code> - Shows explanations to recycling symbols<br />
+        <code>false</code> - Does not show any explanation details<br />
+        </td>
+    </tr>
   </tbody>
 </table>
 
