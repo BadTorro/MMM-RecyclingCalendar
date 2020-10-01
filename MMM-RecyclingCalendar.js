@@ -89,9 +89,8 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
-    // TODO: not showing when calendarData.length == 0
     if(this.calendarData.length == 0){
-      wrapper.innerHTML = "No results for given configuration."; 
+      wrapper.innerHTML = "No results for set configuration."; 
       wrapper.className = "light small"; 
       return wrapper; 
     }
