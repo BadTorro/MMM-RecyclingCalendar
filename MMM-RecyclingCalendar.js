@@ -129,7 +129,8 @@ Module.register("MMM-RecyclingCalendar", {
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container"); 
       if(this.config.showExplanation){
-        iconContainer.appendChild(this.svgIconFactory(entry['type'])+" ["+entry['type']+"]");
+        iconContainer.appendChild(this.svgIconFactory(entry['type']));
+        iconContainer.appendChild(" ["+entry['type']+"]");
       } else {
         iconContainer.appendChild(this.svgIconFactory(entry['type']));
       }
