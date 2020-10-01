@@ -12,11 +12,12 @@ module.exports = NodeHelper.create({
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
     var url;
-    if(payload.showType == 'general'){
-      url = payload.url+"calendar.json"; 
-    } else {
-      url = payload.url+"calendar/"+payload.showType+".json";
-    }
+    // if(payload.showType == 'general'){
+    //   url = payload.url+"calendar.json"; 
+    // } else {
+    //   url = payload.url+"calendar/"+payload.showType+".json";
+    // }
+    url = payload.url+"calender.json";
 
     url = new URL(url);
 
@@ -25,6 +26,9 @@ module.exports = NodeHelper.create({
     params.append('start', startdate);
     params.append('end', enddate);
     params.append('sort', payload.sort);
+    if(payload.showType){
+      params.append('types', payload.showType);
+    }
 
     url.search = params.toString();
 
