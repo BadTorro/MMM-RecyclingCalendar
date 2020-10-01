@@ -83,6 +83,15 @@ Recycling calender for stadt zuerich
         <code>waste</code> - Shows waste recycling for given date period<br />
         </td>
     </tr>
+    <tr>
+        <td><code>showLocations</code></td>
+        <td>Shows the location of tram recycling stations (cargotrams & etrams)  
+        <br /><br />
+        <strong>Default values: </strong><code>false</code><br />
+        <strong>Possible values:</strong>
+        <code>true/false</code>
+        </td>
+    </tr>
   </tbody>
 </table>
 
