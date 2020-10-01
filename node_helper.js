@@ -1,6 +1,7 @@
 const NodeHelper = require("node_helper");
 const moment = require("moment");
 const fetch = require('node-fetch');
+const { resolveNs } = require("dns");
 
 module.exports = NodeHelper.create({
   start: function() {
@@ -45,7 +46,7 @@ module.exports = NodeHelper.create({
           console.log(json); 
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
-          console.log(response.status, response.statusText);
+          console.log(response.status, response.statusText, response.json());
           // this.sendSocketNotification('CALENDAR_ERROR');
         }
       } catch (error){
