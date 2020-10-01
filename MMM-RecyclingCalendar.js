@@ -57,14 +57,12 @@ Module.register("MMM-RecyclingCalendar", {
     // console.log("payload length: "+payload['result'].length);
 
     // TODO: Error handling, if payload = empty 
-    if(notification == "CALENDAR_RESULT"){
-      if(payload['result'].length > 0){
-        Log.log(payload['result']);
-        Log.log("Payload length: "+payload['result'].length);
-        this.calendarData = payload['result'];    
-      }
-      this.updateDom(1000); 
-    }
+    if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
+      Log.log(payload['result']);
+      Log.log("Payload length: "+payload['result'].length);
+      this.calendarData = payload['result'];    
+    } 
+    this.updateDom(1000);    
         
   },
 

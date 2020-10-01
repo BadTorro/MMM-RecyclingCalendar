@@ -27,14 +27,6 @@ module.exports = NodeHelper.create({
 
     // console.log("URL: "+url);
 
-    var checkStatus = res => {
-      if(res.ok){
-        return res; 
-      } else {
-        throw MyCustomError(res.statusText);
-      }
-    }
-
     (async () => {
       try {
         var response = await fetch(url, {
@@ -47,6 +39,7 @@ module.exports = NodeHelper.create({
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
           console.log(response.status, response.statusText);
+          this.sendSocketNotification('CALENDAR_RESULT', json);
         }
       } catch (error){
         console.log(error);
