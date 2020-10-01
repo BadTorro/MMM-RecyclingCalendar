@@ -40,16 +40,15 @@ module.exports = NodeHelper.create({
           method: 'GET', 
           headers: {'Content-Type': 'application/json'}, 
         });
-  
-        var json = await response.json();
+        if(response.ok){
+          var json = await response.json();             
+          console.log(json); 
+          this.sendSocketNotification('CALENDAR_RESULT', json);
+        }
       } catch (error){
         console.log(error);
       }
-         
-      console.log(json); 
-      this.sendSocketNotification('CALENDAR_RESULT', json);
     })();
-
   },
 
 
