@@ -54,7 +54,7 @@ Module.register("MMM-RecyclingCalendar", {
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-    // console.log("payload: "+payload['result'].length);
+    console.log("payload: "+payload['result']);
 
     // TODO: Error handling, if payload = empty 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
@@ -96,7 +96,7 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
-    console.log(this.calendarData);
+
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
