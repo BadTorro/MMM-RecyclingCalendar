@@ -40,12 +40,13 @@ module.exports = NodeHelper.create({
           method: 'GET', 
           headers: {'Content-Type': 'application/json'}, 
         });
-        if(response.ok){
+        if(response.status >= 200 && response.status <= 299){
           var json = await response.json();             
           console.log(json); 
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
-          this.sendSocketNotification('CALENDAR_ERROR');
+          console.log(response.status, response.statusText);
+          // this.sendSocketNotification('CALENDAR_ERROR');
         }
       } catch (error){
         console.log(error);
