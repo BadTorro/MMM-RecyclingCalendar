@@ -130,7 +130,7 @@ Module.register("MMM-RecyclingCalendar", {
 
       // add station 
       var stationContainer = document.createElement("div");
-      stationContainer.className = "normal xsmall light";
+      stationContainer.className = "xsmall light";
       stationContainer.innerHTML = entry['station'];
       entriesContainer.appendChild(stationContainer);
 
