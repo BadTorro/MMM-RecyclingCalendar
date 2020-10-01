@@ -1,4 +1,4 @@
-const { hasUncaughtExceptionCaptureCallback } = require("process");
+// const { hasUncaughtExceptionCaptureCallback } = require("process");
 
 Module.register("MMM-RecyclingCalendar", {
     
