@@ -11,15 +11,7 @@ module.exports = NodeHelper.create({
     var startdate = moment().format('YYYY-MM-DD');
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
 
-    var url;
-    // if(payload.showType == 'general'){
-    //   url = payload.url+"calendar.json"; 
-    // } else {
-    //   url = payload.url+"calendar/"+payload.showType+".json";
-    // }
-    url = payload.url+"calendar.json";
-
-    url = new URL(url);
+    var url = new URL(payload.url);
 
     var params = new URLSearchParams();
     params.append('zip', payload.zipCode);
