@@ -128,16 +128,12 @@ Module.register("MMM-RecyclingCalendar", {
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container"); 
-      iconContainer.appendChild(this.svgIconFactory(entry['type']));
-      entriesContainer.appendChild(iconContainer);
-
-      // add explanation 
       if(this.config.showExplanation){
-        var expContainer = document.createElement("span");
-        iconContainer.classList.add("entry-icon-explanation");
-        expContainer.innerHTML = "["+entry['type']+"]"; 
-        entriesContainer.appendChild(expContainer);
+        iconContainer.appendChild(this.svgIconFactory(entry['type'])+" ["+entry['type']+"]");
+      } else {
+        iconContainer.appendChild(this.svgIconFactory(entry['type']));
       }
+      entriesContainer.appendChild(iconContainer);
       
       // add station 
       if(this.config.showStations && entry['station']){
