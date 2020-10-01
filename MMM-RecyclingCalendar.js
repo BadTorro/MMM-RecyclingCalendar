@@ -1,3 +1,5 @@
+const { hasUncaughtExceptionCaptureCallback } = require("process");
+
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
@@ -122,8 +124,6 @@ Module.register("MMM-RecyclingCalendar", {
       }
       dateContainer.innerHTML = date;
       entriesContainer.appendChild(dateContainer);
-    
-      
 
       // add icon for type 
       var iconContainer = document.createElement("span");
@@ -131,6 +131,14 @@ Module.register("MMM-RecyclingCalendar", {
       iconContainer.appendChild(this.svgIconFactory(entry['type']));
       entriesContainer.appendChild(iconContainer);
 
+      // add explanation 
+      if(this.config.showExplanation){
+        var expContainer = document.createElement("span");
+        expContainer.className = "small light";
+        expContainer.innerHTML = "["+entry['type']+"]"; 
+        entriesContainer.appendChild(expContainer);
+      }
+      
       // add station 
       if(this.config.showStations && entry['station']){
         var stationContainer = document.createElement("div");
