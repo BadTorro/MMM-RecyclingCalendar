@@ -89,7 +89,8 @@ Recycling calender for stadt zuerich
         <br /><br />
         <strong>Default values: </strong><code>false</code><br />
         <strong>Possible values:</strong>
-        <code>true/false</code>
+        <code>true</code> - Shows locations where given<br />
+        <code>false</code> - Does not show any location details<br />
         </td>
     </tr>
   </tbody>
