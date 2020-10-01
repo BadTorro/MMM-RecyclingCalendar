@@ -23,8 +23,8 @@
 
 .MMM-RecyclingCalendar .entries-container .entry-icon-explanation {
     white-space: nowrap;
-    position: relative;
-    display: inline; 
+    position: absolute;
+    float: right; 
     right : 0px;
     top: 6px;
     line-height: 24px;
