@@ -54,11 +54,11 @@ Module.register("MMM-RecyclingCalendar", {
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-    console.log("payload: "+payload['result'].length);
+    // console.log("payload: "+payload['result'].length);
 
     // TODO: Error handling, if payload = empty 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
-      console.log("Payload length "+payload['result'].length);
+      // console.log("Payload length "+payload['result'].length);
       this.calendarData = payload['result'];    
       this.updateDom(1000);
     } else if (notification == "CALENDAR_ERROR"){
