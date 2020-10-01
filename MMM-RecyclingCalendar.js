@@ -61,9 +61,12 @@ Module.register("MMM-RecyclingCalendar", {
       Log.log(payload['result']);
       Log.log("Payload length: "+payload['result'].length);
       this.calendarData = payload['result'];    
+      this.updateDom(1000);
     }
-    this.updateDom(1000);
-
+    if(notification == "CALENDAR_ERROR"){
+      this.updateDom(1000);
+    } 
+        
   },
 
   // TODO: add color images
