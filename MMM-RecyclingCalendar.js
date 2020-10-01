@@ -60,10 +60,9 @@ Module.register("MMM-RecyclingCalendar", {
     if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
       Log.log(payload['result']);
       Log.log("Payload length: "+payload['result'].length);
-      this.calendarData = payload['result'];  
-
-      this.updateDom(1000);
+      this.calendarData = payload['result'];    
     }
+    this.updateDom(1000);
 
   },
 
