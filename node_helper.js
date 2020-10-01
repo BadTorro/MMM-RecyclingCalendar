@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
 
     url.search = params.toString();
 
-    console.log("URL: "+url);
+    // console.log("URL: "+url);
 
     (async () => {
       try {
@@ -38,7 +38,7 @@ module.exports = NodeHelper.create({
         console.log(error);
       }
          
-      console.log(json); 
+      // console.log(json); 
       this.sendSocketNotification('CALENDAR_RESULT', json);
 
     })();
@@ -51,15 +51,8 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
     console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-
     if(notification == "CALENDAR_GET"){
       this.getCalendarData(payload);
     }
-
-    // switch(notification) {
-    //   case "DO_YOUR_JOB":
-    //     this.sendSocketNotification("I_DID", (this.countDown - payload))
-    //     break
-    // }
   },
 })
