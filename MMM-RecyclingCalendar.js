@@ -7,6 +7,7 @@ Module.register("MMM-RecyclingCalendar", {
     sort: "date",
     showDate: "daysAndDate",
     showType: "", 
+    showStations: false
   },
   
 
@@ -126,6 +127,12 @@ Module.register("MMM-RecyclingCalendar", {
       iconContainer.classList.add("entry-icon-container");
       iconContainer.appendChild(this.svgIconFactory(entry['type']));
       entriesContainer.appendChild(iconContainer);
+
+      // add station 
+      var stationContainer = document.createElement("div");
+      stationContainer.className = "light small";
+      stationContainer.innerHTML = entry['station'];
+      entriesContainer.appendChild(stationContainer);
 
       wrapper.appendChild(entriesContainer);
     }
