@@ -134,7 +134,7 @@ Module.register("MMM-RecyclingCalendar", {
       // add explanation 
       if(this.config.showExplanation){
         var expContainer = document.createElement("span");
-        expContainer.className = "small light";
+        expContainer.className = "xsmall light";
         expContainer.innerHTML = "["+entry['type']+"]"; 
         entriesContainer.appendChild(expContainer);
       }
