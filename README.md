@@ -65,7 +65,7 @@ Recycling calender for stadt zuerich
         <td><code>showType</code></td>
         <td>Select the type of recycling setting to show.
         <br /><br />
-        <strong>Default values: </strong><code>empty</code> (none)<br />
+        <strong>Default values: </strong><code>  </code> (empty, none)<br />
         <strong>Possible values: <br /></strong>
         <code>cardboard</code> - Shows cardboard recycling for given date period<br />
         <code>cargotram</code> - Shows cargotram recycling for given date period<br />
