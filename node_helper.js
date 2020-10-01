@@ -26,8 +26,8 @@ module.exports = NodeHelper.create({
     params.append('start', startdate);
     params.append('end', enddate);
     params.append('sort', payload.sort);
-    if(payload.showType){
-      // params.append('types', payload.showType);
+    if(payload.showType != ""){
+      params.append('types', payload.showType);
     }
 
     url.search = params.toString();
