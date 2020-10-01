@@ -96,6 +96,7 @@ Module.register("MMM-RecyclingCalendar", {
       return wrapper; 
     }
 
+    console.log(this.calendarData);
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
