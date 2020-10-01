@@ -132,7 +132,7 @@ Module.register("MMM-RecyclingCalendar", {
       if(this.config.showStations){
         var stationContainer = document.createElement("div");
         stationContainer.className = "xsmall light";
-        console.log(entry('station'));
+        console.log("location: "+entry('station'));
         stationContainer.innerHTML = entry['station'];
         entriesContainer.appendChild(stationContainer);  
       }
