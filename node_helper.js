@@ -48,7 +48,6 @@ module.exports = NodeHelper.create({
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
           console.log(response.status, response.statusText);
-          this.sendSocketNotification('CALENDAR_ERROR', json);
         }
       } catch (error){
         console.log(error);
