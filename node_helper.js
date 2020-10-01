@@ -44,6 +44,8 @@ module.exports = NodeHelper.create({
           var json = await response.json();             
           console.log(json); 
           this.sendSocketNotification('CALENDAR_RESULT', json);
+        } else {
+          console.log(response);
         }
       } catch (error){
         console.log(error);
