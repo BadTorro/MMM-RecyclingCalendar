@@ -1,6 +1,11 @@
 # MMM-RecyclingCalender
 Recycling calender for stadt zuerich
 
+## Installation
+1. Navigate into your MagicMirror `modules` folder and execute<br>
+`git clone https://github.com/FatTony123/MMM-RecyclingCalendar.git`.
+
+
 ## App to show recycling data of city zuerich 
 - https://data.stadt-zuerich.ch/dataset?q=entsorgung
 - https://www.stadt-zuerich.ch/portal/de/index/ogd/anwendungen/2019/open_erz_api.html
