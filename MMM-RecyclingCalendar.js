@@ -7,7 +7,7 @@ Module.register("MMM-RecyclingCalendar", {
     sort: "date",
     showDate: "daysAndDate",
     showType: "", 
-    showStations: false
+    showStations: true
   },
   
 
@@ -129,11 +129,14 @@ Module.register("MMM-RecyclingCalendar", {
       entriesContainer.appendChild(iconContainer);
 
       // add station 
-      var stationContainer = document.createElement("div");
-      stationContainer.className = "xsmall light";
-      stationContainer.innerHTML = entry['station'];
-      entriesContainer.appendChild(stationContainer);
-
+      if(this.config.showStations){
+        var stationContainer = document.createElement("div");
+        stationContainer.className = "xsmall light";
+        console.log(entry('station'));
+        stationContainer.innerHTML = entry['station'];
+        entriesContainer.appendChild(stationContainer);  
+      }
+      
       wrapper.appendChild(entriesContainer);
     }
 
