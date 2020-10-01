@@ -22,11 +22,11 @@ module.exports = NodeHelper.create({
     if(payload.showType != ""){
       params.append('types', payload.showType);
     }
-    params.append('limit', 20);
+    params.append('limit', 50);
 
     url.search = params.toString();
 
-    console.log("URL: "+url);
+    // console.log("URL: "+url);
 
     (async () => {
       try {
