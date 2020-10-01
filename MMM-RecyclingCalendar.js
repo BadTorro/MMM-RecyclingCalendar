@@ -57,7 +57,7 @@ Module.register("MMM-RecyclingCalendar", {
     console.log("payload: "+payload['result'].length);
 
     // TODO: Error handling, if payload = empty 
-    if(notification == "CALENDAR_RESULT" && payload['result'].length > 0){
+    if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
       console.log("Payload length "+payload['result'].length);
       this.calendarData = payload['result'];    
       this.updateDom(1000);
