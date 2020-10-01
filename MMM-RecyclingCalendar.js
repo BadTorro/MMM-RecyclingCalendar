@@ -7,7 +7,7 @@ Module.register("MMM-RecyclingCalendar", {
     sort: "date",
     showDate: "daysAndDate",
     showType: "", 
-    showStations: true,
+    showStations: false,
     showExplanation: false
   },
   
