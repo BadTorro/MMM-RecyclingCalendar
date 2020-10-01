@@ -22,6 +22,7 @@ module.exports = NodeHelper.create({
     if(payload.showType != ""){
       params.append('types', payload.showType);
     }
+    params.append('limit', 20);
 
     url.search = params.toString();
 
