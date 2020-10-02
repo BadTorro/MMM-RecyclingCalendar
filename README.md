@@ -18,17 +18,17 @@ npm install
 Go to the MagicMirror/config directory and edit the config.js file. Add the module to your modules array in your config.js.
 
 ```
-		{
-			module: "MMM-RecyclingCalendar",
-			position: "top_left",
-			header: "Recycling Calendar",
-			config: {
-        zipCode: 8048, 
-				daysToDisplay: 7,
-				showStations: false,
-    		showExplanation: false
-			}
-		}
+{
+  module: "MMM-RecyclingCalendar",
+  position: "top_left",
+  header: "Recycling Calendar",
+  config: {
+    zipCode: 8048, 
+    daysToDisplay: 7,
+    showStations: false,
+    showExplanation: false
+  }
+}
 ```
 
 ## Module configuration 
