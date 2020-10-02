@@ -38,15 +38,15 @@ Module.register("MMM-RecyclingCalendar", {
   },
       
   notificationReceived: function(notification, payload, sender) {
-    if (sender) {
-      Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
-    } else {
-      Log.log(this.name + " received a system notification: " + notification);
-    }
+    // if (sender) {
+    //   Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+    // } else {
+    //   Log.log(this.name + " received a system notification: " + notification);
+    // }
   },
 
   socketNotificationReceived: function(notification, payload) {
-    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+    // Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
       this.calendarData = payload['result'];    
