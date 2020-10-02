@@ -6,6 +6,7 @@ This displays the recycling calendar for the Stadt Zürich, Switzerland, based o
 
 ## Installation
 Clone this repository in your modules folder, and install dependencies:
+
 ```
 cd ~/MagicMirror/modules 
 git clone https://github.com/FatTony123/MMM-RecyclingCalendar.git
@@ -15,6 +16,7 @@ npm install
 
 ## Configuration 
 Go to the MagicMirror/config directory and edit the config.js file. Add the module to your modules array in your config.js.
+
 ```
 		{
 			module: "MMM-RecyclingCalendar",
@@ -108,7 +110,7 @@ The following options can be configured for the module.
   </tbody>
 </table>
 
-## Icons: 
+## Icons
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 ## License
