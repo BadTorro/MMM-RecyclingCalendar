@@ -43,26 +43,12 @@ Module.register("MMM-RecyclingCalendar", {
     } else {
       Log.log(this.name + " received a system notification: " + notification);
     }
-
-    
-    // switch(notification) {
-    //   case "DOM_OBJECTS_CREATED":
-    //     var timer = setInterval(()=>{
-    //       this.sendSocketNotification("MMM-RECYCLINGCALENDAR-CONFIG", this.count)
-    //       this.count++
-    //     }, 1000)
-    //     break
-    // }
   },
 
   socketNotificationReceived: function(notification, payload) {
     Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 
-    // console.log("payload: "+payload);
-
-    // TODO: Error handling, if payload = empty 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
-      // console.log("Payload length "+payload['result'].length);
       this.calendarData = payload['result'];    
       this.updateDom(1000);
     } else if (notification == "CALENDAR_ERROR"){
@@ -71,9 +57,7 @@ Module.register("MMM-RecyclingCalendar", {
         
   },
 
-  // TODO: add color images
   svgIconFactory: function(type) {
- 
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");

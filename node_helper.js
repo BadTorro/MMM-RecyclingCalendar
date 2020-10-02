@@ -26,7 +26,6 @@ module.exports = NodeHelper.create({
 
     url.search = params.toString();
 
-    // console.log("URL: "+url);
 
     (async () => {
       try {
@@ -37,7 +36,7 @@ module.exports = NodeHelper.create({
         var json = "";
         if(response.status >= 200 && response.status <= 299){
           json = await response.json();
-          console.log(json);             
+          // console.log(json);             
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
           console.log(response.status, response.statusText);
