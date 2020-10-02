@@ -1,34 +1,36 @@
 # MMM-RecyclingCalender
-Recycling calender for stadt zuerich
+This a module for [Magic Mirror²](https://github.com/MichMich/MagicMirror).
+This displays the recycling calendar for the Stadt Zürich, Switzerland, based on [OpenERZ API](https://github.com/metaodi/openerz). 
+
+![Screenshot](screenshot.png)
 
 ## Installation
-1. Navigate into your MagicMirror `modules` folder and execute<br>
-`git clone https://github.com/FatTony123/MMM-RecyclingCalendar.git`.
+Clone this repository in your modules folder, and install dependencies:
+```
+cd ~/MagicMirror/modules 
+git clone https://github.com/FatTony123/MMM-RecyclingCalendar.git
+cd MMM-RecyclingCalendar
+npm install 
+```
 
+## Configuration 
+Go to the MagicMirror/config directory and edit the config.js file. Add the module to your modules array in your config.js.
+```
+		{
+			module: "MMM-RecyclingCalendar",
+			position: "top_left",
+			header: "Recycling Calendar",
+			config: {
+        zipCode: 8048, 
+				daysToDisplay: 7,
+				showStations: false,
+    		showExplanation: false
+			}
+		}
+```
 
-## App to show recycling data of city zuerich 
-- https://data.stadt-zuerich.ch/dataset?q=entsorgung
-- https://www.stadt-zuerich.ch/portal/de/index/ogd/anwendungen/2019/open_erz_api.html
-- http://openerz.metaodi.ch/documentation#/api/getApiCalendarCardboardformat
-
-## Similar module to: 
-- https://forum.magicmirror.builders/topic/2731/mmm-mywastepickup-toronto-waste-collection-schedule
-- https://github.com/htilburgs/MMM-MyGarbage
-
-
-## Useful links for learing: 
-- https://github.com/mykle1/MMM-UFO
-- https://github.com/htilburgs/MMM-MyGarbage
-- https://docs.magicmirror.builders/development/core-module-file.html#module-instance-methods
-- https://github.com/jclarke0000/MMM-MyWastePickup
-
-
-## Content of app  
-- Shows recycling entries for current week 
-- Default value of weeks to show: weeksToDisplay 
-- Show each day with recycling activity within those 7 days 
-
-## Configuration options
+## Module configuration 
+The following options can be configured for the module. 
 <table>
   <thead>
     <tr>
@@ -109,7 +111,18 @@ Recycling calender for stadt zuerich
 ## Icons: 
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-## Open Todos: 
-- add color icons
-- more sophisticated error handling? 
-- add sort possiblities --> Currently sort by date 
+## License
+### The MIT License (MIT)
+Copyright © 2020 FatTony123
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+The software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+
+Note
+The original script is from Jeff Clarke MMM-MyWastePickup and only for the Toronto area. Now it has become a general script, to use in all areas all over the world.
+
+#### Note
+The original script is from Jeff Clarke `MMM-MyWastePickup` and `MMM-MyGarbage`, adapted to fit an API and different appearance. 
