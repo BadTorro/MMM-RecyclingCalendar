@@ -2,7 +2,7 @@
 This a module for [Magic Mirror²](https://github.com/MichMich/MagicMirror).
 This displays the recycling calendar for the Stadt Zürich, Switzerland, based on [OpenERZ API](https://github.com/metaodi/openerz). 
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.png?raw=true "Recycling Calendar Screenshot")
 
 ## Installation
 Clone this repository in your modules folder, and install dependencies:
