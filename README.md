@@ -23,10 +23,11 @@ Go to the MagicMirror/config directory and edit the config.js file. Add the modu
   position: "top_left",
   header: "Recycling Calendar",
   config: {
-    zipCode: 8048, 
+    zipCode: 8001, 
     daysToDisplay: 7,
-    showStations: false,
-    showExplanation: false
+    showStations: true,
+    showExplanation: true, 
+    showDate: "daysAndDate"
   }
 }
 ```
