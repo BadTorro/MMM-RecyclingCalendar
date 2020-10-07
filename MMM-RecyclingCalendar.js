@@ -115,12 +115,6 @@ Module.register("MMM-RecyclingCalendar", {
           }
           break;
       }
-      // if(curDate == date){
-      //   dateContainer.innerHTML = "Today, "+date;
-      // } else {
-      //   dateContainer.innerHTML = date;
-      // }
-      // dateContainer.innerHTML = date; 
       entriesContainer.appendChild(dateContainer);
 
       // add icon for type 
