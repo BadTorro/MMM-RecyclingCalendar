@@ -62,8 +62,8 @@ Module.register("MMM-RecyclingCalendar", {
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    console.log("colored icons: "+this.showColorIcons);
-    if(this.showColorIcons){
+    console.log("colored icons: "+this.config.showColorIcons);
+    if(this.config.showColorIcons){
       use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite_color.svg#") + type);
     } else {
       use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
