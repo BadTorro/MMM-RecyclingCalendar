@@ -85,7 +85,8 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
 
-    var curDate = moment().format('dddd, DD.MM.YYYY');
+    var today = moment().format('dddd, DD.MM.YYYY');
+    var tomorrow = today.clone().add(1, 'days');
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
@@ -107,8 +108,8 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
           break;
       }
-      console.log("Curdate: "+curDate);
-      console.log("Date: "+date);
+      console.log("Today: "+today);
+      console.log("Tomorrow: "+tomorrow);
       if(curDate == date){
         dateContainer.innerHTML = "Today, "+date;
       } else {
