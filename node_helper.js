@@ -34,8 +34,7 @@ module.exports = NodeHelper.create({
         });
         var json = "";
         if(response.status >= 200 && response.status <= 299){
-          json = await response.json();
-          // console.log(json);             
+          json = await response.json();        
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
           console.log(response.status, response.statusText);

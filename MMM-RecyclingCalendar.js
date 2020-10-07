@@ -10,7 +10,8 @@ Module.register("MMM-RecyclingCalendar", {
     showDate: "daysAndDate",
     showType: "", 
     showStations: false,
-    showExplanation: false
+    showExplanation: false, 
+    showColorIcons: false
   },
   
 
@@ -61,7 +62,12 @@ Module.register("MMM-RecyclingCalendar", {
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
+    if(this.showColorIcons){
+      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite_color.svg#") + type);
+    } else {
+      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
+    }
+    
     svg.appendChild(use);
     
     return(svg);
