@@ -106,8 +106,13 @@ Module.register("MMM-RecyclingCalendar", {
           break; 
         case 'daysAndDate':
           date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');          
-          console.log("Today: "+today.format('dddd, DD.MM.YYYY'));
-          console.log("Tomorrow: "+tomorrow);
+          if (date == today.format('dddd, DD.MM.YYYY')){
+            dateContainer.innerHTML = "Today, "+date; 
+          } else if (date == tomorrow.format('dddd, DD.MM.YYYY')){
+            dateContainer.innerHTML = "Tomorrow, "+date;
+          } else {
+            dateContainer.innerHTML = date; 
+          }
           break;
       }
       // if(curDate == date){
@@ -115,7 +120,7 @@ Module.register("MMM-RecyclingCalendar", {
       // } else {
       //   dateContainer.innerHTML = date;
       // }
-      dateContainer.innerHTML = date; 
+      // dateContainer.innerHTML = date; 
       entriesContainer.appendChild(dateContainer);
 
       // add icon for type 
