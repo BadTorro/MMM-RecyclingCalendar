@@ -85,6 +85,7 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
 
+    var curDate = moment().format()
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
@@ -106,7 +107,11 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
           break;
       }
-      dateContainer.innerHTML = date;
+      if(curDate == date){
+        dateContainer.innerHTML = "Tomorrow, "+date;
+      } else {
+        dateContainer.innerHTML = date;
+      }
       entriesContainer.appendChild(dateContainer);
 
       // add icon for type 
