@@ -108,6 +108,16 @@ The following options can be configured for the module.
         <code>false</code> - Does not show any explanation details<br />
         </td>
     </tr>
+     <tr>
+        <td><code>showColorIcons</code></td>
+        <td>Shows colored icons instead of grayscale ones 
+        <br /><br />
+        <strong>Default values: </strong><code>false</code><br />
+        <strong>Possible values:</strong><br />
+        <code>true</code> - Shows colored icons<br />
+        <code>false</code> - Shows grayscale icons<br />
+        </td>
+    </tr>
   </tbody>
 </table>
 
