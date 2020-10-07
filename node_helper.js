@@ -25,9 +25,6 @@ module.exports = NodeHelper.create({
     params.append('limit', 50);
 
     url.search = params.toString();
-    
-    console.log("URL: "+url);
-
 
     (async () => {
       try {
