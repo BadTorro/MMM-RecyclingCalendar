@@ -85,7 +85,7 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
 
-    var curDate = moment().format()
+    var curDate = moment().format('dddd, DD.MM.YYYY');
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
