@@ -107,8 +107,7 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
           break;
       }
-      console.log("Curdate: "+curDate);
-      console.log("Date: "+date);
+      console.log("Curdate: "+curDate+" && Date: "+date);
       if(curDate == date){
         dateContainer.innerHTML = "Today, "+date;
       } else {
