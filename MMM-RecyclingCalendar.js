@@ -105,8 +105,8 @@ Module.register("MMM-RecyclingCalendar", {
           date = moment(date, 'YYYY-MM-DD').format('DD.MM.YYYY');
           break; 
         case 'daysAndDate':
-          date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');
-          console.log("Today: "+today);
+          date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');          
+          console.log("Today: "+today.format('dddd, DD.MM.YYYY'));
           console.log("Tomorrow: "+tomorrow);
           break;
       }
