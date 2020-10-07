@@ -86,7 +86,7 @@ Module.register("MMM-RecyclingCalendar", {
 
 
     var today = moment().format('dddd, DD.MM.YYYY');
-    var tomorrow = today.clone().add(1, 'days');
+    var tomorrow = today.add(1, 'days');
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
