@@ -85,8 +85,8 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
 
-    var today = moment().format('dddd, DD.MM.YYYY');
-    var tomorrow = moment(today, 'dddd, DD.MM.YYYY').add(1, 'days');
+    var today = moment();
+    var tomorrow = moment().add(1, 'days');
     for(var i = 0; i<this.calendarData.length; i++){
       var entry = this.calendarData[i];
 
@@ -110,11 +110,12 @@ Module.register("MMM-RecyclingCalendar", {
           console.log("Tomorrow: "+tomorrow);
           break;
       }
-      if(curDate == date){
-        dateContainer.innerHTML = "Today, "+date;
-      } else {
-        dateContainer.innerHTML = date;
-      }
+      // if(curDate == date){
+      //   dateContainer.innerHTML = "Today, "+date;
+      // } else {
+      //   dateContainer.innerHTML = date;
+      // }
+      dateContainer.innerHTML = date; 
       entriesContainer.appendChild(dateContainer);
 
       // add icon for type 
