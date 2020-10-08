@@ -26,6 +26,8 @@ module.exports = NodeHelper.create({
 
     url.search = params.toString();
 
+    console.log("URL: "+url);
+
     (async () => {
       try {
         var response = await fetch(url, {
