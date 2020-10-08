@@ -11,6 +11,7 @@ module.exports = NodeHelper.create({
   getCalendarData: function(payload){
     var startdate = moment().format('YYYY-MM-DD');
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days');
+    console.log("enddate: "+enddate);
 
     var url = new URL(payload.url);
 
