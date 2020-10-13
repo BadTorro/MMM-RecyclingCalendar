@@ -36,7 +36,7 @@
     fill: currentColor;
     vertical-align: middle;
     display: inline;
-    position: relative;
+    position: absolute;
     margin-left:4px;
 }
 
