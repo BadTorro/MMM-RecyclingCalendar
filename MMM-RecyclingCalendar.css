@@ -20,22 +20,13 @@
     top: 6px;
     line-height: 24px;
   }
-
-.MMM-RecyclingCalendar .entries-container .entry-icon-explanation {
-    white-space: nowrap;
-    position: absolute;
-    float: right; 
-    right : 0px;
-    top: 6px;
-    line-height: 24px;
-  }
   
 .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon {
     width: 24px;
     height: 24px;
     fill: currentColor;
     vertical-align: bottom;
-    display: inline;
+    display: inline-block;
     position: relative;
     margin-left:4px;
 }
