@@ -26,12 +26,7 @@
     height: 24px;
     fill: currentColor;
     vertical-align: bottom;
-    display: inline-block;
+    display: inline;
     position: relative;
     margin-left:4px;
 }
-
-/* .MMM-RecyclingCalendar .entries-container .entry-icon-container .entry-icon.general {
-    fill: #3499D4;
-    border: 1px solid; 
-} */
