@@ -34,9 +34,9 @@
     width: 24px;
     height: 24px;
     fill: currentColor;
-    vertical-align: middle;
+    vertical-align: bottom;
     display: inline;
-    position: absolute;
+    position: relative;
     margin-left:4px;
 }
 
