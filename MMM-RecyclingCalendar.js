@@ -78,6 +78,8 @@ Module.register("MMM-RecyclingCalendar", {
   getDom: function() {
     var wrapper = document.createElement("div");
 
+    Log.log("Length: "+this.calendarData.length);
+
     if(this.init == true){
       wrapper.innerHTML = "Fetching results..."; 
       wrapper.className = "dimmed light small"; 
