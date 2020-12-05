@@ -89,7 +89,7 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
     if(this.calendarData.length == 0){
-      wrapper.innerHTML = "No results for set configuration."; 
+      wrapper.innerHTML = "No results avialable for current configuration."; 
       wrapper.className = "light small"; 
       return wrapper; 
     }
