@@ -12,6 +12,7 @@ Module.register("MMM-RecyclingCalendar", {
     showStations: false,
     showExplanation: false, 
     showColorIcons: false, 
+    startDate: "2020-12-01",
   },
   
 
