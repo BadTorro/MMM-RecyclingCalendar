@@ -12,7 +12,6 @@ Module.register("MMM-RecyclingCalendar", {
     showStations: false,
     showExplanation: false, 
     showColorIcons: false, 
-    startDate: "2020-12-01",
   },
   
 
@@ -79,8 +78,6 @@ Module.register("MMM-RecyclingCalendar", {
   getDom: function() {
     var wrapper = document.createElement("div");
 
-    Log.log("Length: "+this.calendarData.length);
-
     if(this.init == true){
       wrapper.innerHTML = "Fetching results..."; 
       wrapper.className = "dimmed light small"; 
@@ -93,7 +90,6 @@ Module.register("MMM-RecyclingCalendar", {
       wrapper.className = "light small"; 
       return wrapper; 
     }
-
 
     var today = moment();
     var tomorrow = moment().add(1, 'days');
