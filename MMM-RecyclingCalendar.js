@@ -11,7 +11,8 @@ Module.register("MMM-RecyclingCalendar", {
     showType: "", 
     showStations: false,
     showExplanation: false, 
-    showColorIcons: false, 
+    showColorIcons: false,
+    limitEntries: "50", 
   },
   
 

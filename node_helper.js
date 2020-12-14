@@ -1,7 +1,6 @@
 const NodeHelper = require("node_helper");
 const moment = require("moment");
 const fetch = require('node-fetch');
-const { resolveNs } = require("dns");
 
 module.exports = NodeHelper.create({
   start: function() {
@@ -22,7 +21,7 @@ module.exports = NodeHelper.create({
     if(payload.showType != ""){
       params.append('types', payload.showType);
     }
-    params.append('limit', 50);
+    params.append('limit', payload.limitEntries);
 
     url.search = params.toString();
 
