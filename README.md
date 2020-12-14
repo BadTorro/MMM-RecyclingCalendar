@@ -118,6 +118,13 @@ The following options can be configured for the module.
         <code>false</code> - Shows grayscale icons<br />
         </td>
     </tr>
+    <tr>
+        <td><code>limitEntries</code></td>
+        <td>Limits the result entries shown in the result table.  
+        <br /><br />
+        <strong>Default values: </strong><code>50</code><br />
+        </td>
+    </tr>
   </tbody>
 </table>
 
