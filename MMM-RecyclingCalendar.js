@@ -1,5 +1,6 @@
 // const { hasUncaughtExceptionCaptureCallback } = require("process");
 
+
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
