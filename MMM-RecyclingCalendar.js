@@ -1,5 +1,7 @@
 // const { hasUncaughtExceptionCaptureCallback } = require("process");
 
+// TOOD: 
+// Add timer to update dom / results after couple of minutes
 
 Module.register("MMM-RecyclingCalendar", {
     
