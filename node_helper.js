@@ -12,6 +12,7 @@ module.exports = NodeHelper.create({
     var enddate = moment(startdate, 'YYYY-MM-DD').add(payload.daysToDisplay, 'days').format('YYYY-MM-DD');
 
     var url = new URL(payload.url);
+    console.log(url);
 
     var params = new URLSearchParams();
     params.append('zip', payload.zipCode);
