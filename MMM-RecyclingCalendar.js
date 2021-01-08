@@ -37,9 +37,11 @@ Module.register("MMM-RecyclingCalendar", {
     this.calendarData = [];
     this.init = true;
   
-    // setInterval(function() {
+    this.getRecyclingData();
+    setInterval(function() {
       this.getRecyclingData();
-    // }, this.config.pollFrequency);
+      Log.log("Triggering poll frequency");
+    }, this.config.pollFrequency);
   },
 
   getRecyclingData: function(){
