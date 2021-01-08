@@ -37,8 +37,8 @@ Module.register("MMM-RecyclingCalendar", {
     this.calendarData = [];
     this.init = true;
   
-    setInterval(() => {
-      this.getRecyclingData();  
+    setInterval(function() {
+      this.getRecyclingData();
     }, this.config.pollFrequency);
   },
 
