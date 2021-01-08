@@ -2,6 +2,7 @@
 
 // TOOD: 
 // Add timer to update dom / results after couple of minutes
+// Show time when update happend on the header / headline 
 
 Module.register("MMM-RecyclingCalendar", {
     
@@ -16,6 +17,7 @@ Module.register("MMM-RecyclingCalendar", {
     showExplanation: false, 
     showColorIcons: false,
     limitEntries: "50", 
+    pollFrequency: 10 * 60 * 1000, // every 10 minutes 
   },
   
 
@@ -30,24 +32,18 @@ Module.register("MMM-RecyclingCalendar", {
   },
     
   start: function (){ // is executed when module is loaded successfully 
-        Log.info('Starting module: ' + this.name);
+    Log.info('Starting module: ' + this.name);
 
-        this.calendarData = [];
-        this.init = true;
-      
-        this.getRecyclingData();
-      },
+    this.calendarData = [];
+    this.init = true;
+  
+    setInterval(() => {
+      this.getRecyclingData();  
+    }, this.config.pollFrequency);
+  },
 
   getRecyclingData: function(){
     this.sendSocketNotification('CALENDAR_GET', this.config);
-  },
-      
-  notificationReceived: function(notification, payload, sender) {
-    // if (sender) {
-    //   Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
-    // } else {
-    //   Log.log(this.name + " received a system notification: " + notification);
-    // }
   },
 
   socketNotificationReceived: function(notification, payload) {
@@ -55,11 +51,10 @@ Module.register("MMM-RecyclingCalendar", {
 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
       this.calendarData = payload['result'];    
-      this.updateDom(1000);
+      this.updateDom();
     } else if (notification == "CALENDAR_ERROR"){
-      this.updateDom(1000);    
+      this.updateDom();    
     }
-        
   },
 
   svgIconFactory: function(type) {
@@ -73,7 +68,6 @@ Module.register("MMM-RecyclingCalendar", {
     }
     
     svg.appendChild(use);
-    
     return(svg);
 
   },
@@ -153,4 +147,12 @@ Module.register("MMM-RecyclingCalendar", {
 
     return wrapper;
   },
+
+  // notificationReceived: function(notification, payload, sender) {
+  //   // if (sender) {
+  //   //   Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+  //   // } else {
+  //   //   Log.log(this.name + " received a system notification: " + notification);
+  //   // }
+  // },
 })
