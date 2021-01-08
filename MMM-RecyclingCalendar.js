@@ -51,9 +51,9 @@ Module.register("MMM-RecyclingCalendar", {
 
     if(notification == "CALENDAR_RESULT" && payload['result'].length >= 0){
       this.calendarData = payload['result'];    
-      this.updateDom();
+      this.updateDom(1000);
     } else if (notification == "CALENDAR_ERROR"){
-      this.updateDom();    
+      this.updateDom(1000);    
     }
   },
 
