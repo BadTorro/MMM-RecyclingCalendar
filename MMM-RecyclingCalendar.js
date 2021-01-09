@@ -195,4 +195,4 @@ Module.register("MMM-RecyclingCalendar", {
   //   //   Log.log(this.name + " received a system notification: " + notification);
   //   // }
   // },
-})
+});
