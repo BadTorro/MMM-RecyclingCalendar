@@ -40,6 +40,7 @@ Module.register("MMM-RecyclingCalendar", {
     this.calendarData = [];
     this.init = true;
     this.pollTime; 
+    this.hideTime = 30000; // hides update hint after given time 
 
     this.getRecyclingData();
     var self = this; 
@@ -161,7 +162,7 @@ Module.register("MMM-RecyclingCalendar", {
 
       setTimeout(function() {
         updateHint.style.display='none';
-      }, 10000);
+      }, this.hideTime);
 
       wrapper.appendChild(updateHint);
     }
