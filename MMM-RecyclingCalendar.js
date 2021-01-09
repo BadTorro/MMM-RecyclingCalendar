@@ -46,7 +46,7 @@ Module.register("MMM-RecyclingCalendar", {
     setInterval(function() {
       self.getRecyclingData();
       Log.log("Triggering poll frequency");
-      self.pollTime = moment().format('HH:mm:ss');
+      self.pollTime = moment().format('HH:mm');
     }, this.config.pollFrequency);
   },
 
@@ -157,7 +157,7 @@ Module.register("MMM-RecyclingCalendar", {
     if(this.config.showUpdateHint && this.pollTime !== undefined){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
-      updateHint.innerHTML = 'Updated at '+this.pollTime; 
+      updateHint.innerHTML = 'Last updated at '+this.pollTime; 
       wrapper.appendChild(updateHint);
     }
 
