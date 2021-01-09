@@ -130,7 +130,7 @@ The following options can be configured for the module.
         <td>Shows a small hint at the bottom of list mentioning the last performed update time. 
         <br /><br />
         <strong>Default values: </strong><code>true</code><br />
-        <strong>Possible values:</strong><br />
+        <strong>Possible values:</strong>
         <code>true</code>, <code>false</code>
         </td>
     </tr>
