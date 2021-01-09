@@ -39,13 +39,14 @@ Module.register("MMM-RecyclingCalendar", {
 
     this.calendarData = [];
     this.init = true;
+    this.pollTime; 
 
     this.getRecyclingData();
     var self = this; 
     setInterval(function() {
       self.getRecyclingData();
       Log.log("Triggering poll frequency");
-      self.updateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+      self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
     }, this.config.pollFrequency);
   },
 
@@ -156,7 +157,7 @@ Module.register("MMM-RecyclingCalendar", {
     if(this.config.showUpdateHint && this.pollTime !== undefined){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
-      updateHint.innerHTML = 'Updated at '+this.updateTime; 
+      updateHint.innerHTML = 'Updated at '+this.pollTime; 
       wrapper.appendChild(updateHint);
     }
 
