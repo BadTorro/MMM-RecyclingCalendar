@@ -1,6 +1,3 @@
-// const { hasUncaughtExceptionCaptureCallback } = require("process");
-
-const { clearTimeout } = require("timers");
 
 // TOOD: 
 // Add timer to update dom / results after couple of minutes
