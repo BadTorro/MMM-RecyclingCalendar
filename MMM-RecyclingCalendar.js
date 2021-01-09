@@ -18,7 +18,6 @@ Module.register("MMM-RecyclingCalendar", {
     limitEntries: "50", 
     showUpdateHint: true,
     pollFrequency: 10 * 60 * 1000, // every 10 minutes 
-    initialLoadDelay: 0 // start delay in seconds 
   },
   
 
@@ -35,23 +34,19 @@ Module.register("MMM-RecyclingCalendar", {
   start: function (){ // is executed when module is loaded successfully 
     Log.info('Starting module: ' + this.name);
 
+    // setting locale
+    moment.locale(config.language);
+
     this.calendarData = [];
     this.init = true;
-     
 
-    this.scheduleUpdate(this.config.initialLoadDelay);
-    this.updateTimer = null; 
-    this.pollTime; 
-  
-    // this.getRecyclingData();
-    // var self = this; 
-    // setInterval(function() {
-      // self.getRecyclingData();
-      this.getRecyclingData();
-      // Log.log("Triggering poll frequency");
-      // get update time 
-    //   self.updateTime = moment().format('YYYY-MM-DD HH:mm:ss');
-    // }, this.config.pollFrequency);
+    this.getRecyclingData();
+    var self = this; 
+    setInterval(function() {
+      self.getRecyclingData();
+      Log.log("Triggering poll frequency");
+      self.updateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+    }, this.config.pollFrequency);
   },
 
   getRecyclingData: function(){
@@ -170,20 +165,20 @@ Module.register("MMM-RecyclingCalendar", {
 
   // schedule next update of data while running 
   // argument delay number - Milliseconds before next update. If empty, this.config.updateInterval is used.
-  scheduleUpdate: function(delay) {
-    var nextLoad = this.config.pollFrequency;
-    if(delay !== undefined && delay >= 0){
-      nextLoad = delay; 
-    }
+  // scheduleUpdate: function(delay) {
+  //   var nextLoad = this.config.pollFrequency;
+  //   if(delay !== undefined && delay >= 0){
+  //     nextLoad = delay; 
+  //   }
 
-    var self = this; 
-    clearTimeout(this.updateTimer);
-    this.updateTimer = setTimeout(function(){
-      self.getRecyclingData();
-      self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
-      Log.log("triggering scheduled update");
-    }, nextLoad); 
-  },
+  //   var self = this; 
+  //   clearTimeout(this.updateTimer);
+  //   this.updateTimer = setTimeout(function(){
+  //     self.getRecyclingData();
+  //     self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
+  //     Log.log("triggering scheduled update");
+  //   }, nextLoad); 
+  // },
 
   // notificationReceived: function(notification, payload, sender) {
   //   // if (sender) {
