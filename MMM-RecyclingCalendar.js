@@ -148,16 +148,16 @@ Module.register("MMM-RecyclingCalendar", {
         stationContainer.innerHTML = entry['station'];
         entriesContainer.appendChild(stationContainer);  
       }
-
-      // add update hint 
-      if(this.config.showUpdateHint){
-        var updateHint = document.createElement('div');
-        updateHint.className = 'xsmall light'; 
-        updateHint.innerHTML = 'Update at '+this.updateTime; 
-        entriesContainer.appendChild(updateHint);
-      }
       
       wrapper.appendChild(entriesContainer);
+    }
+
+    // add update hint 
+    if(this.config.showUpdateHint){
+      var updateHint = document.createElement('div');
+      updateHint.className = 'xsmall light'; 
+      updateHint.innerHTML = 'Update at '+this.updateTime; 
+      wrapper.appendChild(updateHint);
     }
 
     return wrapper;
