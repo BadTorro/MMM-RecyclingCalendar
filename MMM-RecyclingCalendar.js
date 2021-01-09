@@ -41,7 +41,7 @@ Module.register("MMM-RecyclingCalendar", {
 
     this.scheduleUpdate(this.config.initialLoadDelay);
     this.updateTimer = null; 
-    this.pollTime = null; 
+    this.pollTime; 
   
     // this.getRecyclingData();
     // var self = this; 
@@ -158,7 +158,7 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
     // add update hint 
-    if(this.config.showUpdateHint && this.pollTime !== null){
+    if(this.config.showUpdateHint && this.pollTime !== undefined){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
       updateHint.innerHTML = 'Updated at '+this.updateTime; 
