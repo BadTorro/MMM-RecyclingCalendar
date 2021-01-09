@@ -17,6 +17,7 @@ Module.register("MMM-RecyclingCalendar", {
     showExplanation: false, 
     showColorIcons: false,
     limitEntries: "50", 
+    showUpdateHint: true,
     pollFrequency: 10 * 60 * 1000, // every 10 minutes 
   },
   
@@ -36,12 +37,15 @@ Module.register("MMM-RecyclingCalendar", {
 
     this.calendarData = [];
     this.init = true;
+    this.updateTime; 
   
     this.getRecyclingData();
     var self = this; 
     setInterval(function() {
       self.getRecyclingData();
       Log.log("Triggering poll frequency");
+      // get update time 
+      self.updateTime = moment(); 
     }, this.config.pollFrequency);
   },
 
@@ -143,6 +147,14 @@ Module.register("MMM-RecyclingCalendar", {
         stationContainer.className = "xsmall light";
         stationContainer.innerHTML = entry['station'];
         entriesContainer.appendChild(stationContainer);  
+      }
+
+      // add update hint 
+      if(this.config.showUpdateHint){
+        var updateHint = document.createElement('div');
+        updateHint.className = 'xsmall light'; 
+        updateHint.innerHTML = 'Update at '+this.updateTime; 
+        entriesContainer.appendChild(updateHint);
       }
       
       wrapper.appendChild(entriesContainer);
