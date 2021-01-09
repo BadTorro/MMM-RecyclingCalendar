@@ -158,6 +158,7 @@ Module.register("MMM-RecyclingCalendar", {
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
       updateHint.innerHTML = 'Last updated at '+this.pollTime; 
+      updateHint.delay(30000).fadeOut();
       wrapper.appendChild(updateHint);
     }
 
