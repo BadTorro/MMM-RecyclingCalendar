@@ -155,7 +155,7 @@ Module.register("MMM-RecyclingCalendar", {
     // add update hint 
     if(this.config.showUpdateHint){
       var updateHint = document.createElement('div');
-      updateHint.className = 'xsmall italic'; 
+      updateHint.className = 'xsmall dimmed italic'; 
       updateHint.innerHTML = 'Update at '+this.updateTime; 
       wrapper.appendChild(updateHint);
     }
