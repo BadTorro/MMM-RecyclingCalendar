@@ -153,10 +153,10 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
     // add update hint 
-    if(this.config.showUpdateHint){
+    if(this.config.showUpdateHint && this.updateTime != ''){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
-      updateHint.innerHTML = 'Update at '+this.updateTime; 
+      updateHint.innerHTML = 'Updated at '+this.updateTime; 
       wrapper.appendChild(updateHint);
     }
 
