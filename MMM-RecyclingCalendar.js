@@ -1,5 +1,7 @@
 // const { hasUncaughtExceptionCaptureCallback } = require("process");
 
+const { clearTimeout } = require("timers");
+
 // TOOD: 
 // Add timer to update dom / results after couple of minutes
 // Show time when update happend on the header / headline 
@@ -19,6 +21,7 @@ Module.register("MMM-RecyclingCalendar", {
     limitEntries: "50", 
     showUpdateHint: true,
     pollFrequency: 10 * 60 * 1000, // every 10 minutes 
+    initialLoadDelay: 0 // start delay in seconds 
   },
   
 
@@ -37,16 +40,21 @@ Module.register("MMM-RecyclingCalendar", {
 
     this.calendarData = [];
     this.init = true;
-    this.updateTime; 
+     
+
+    this.scheduleUpdate(this.config.initialLoadDelay);
+    this.updateTimer = null; 
+    this.pollTime = null; 
   
-    this.getRecyclingData();
-    var self = this; 
-    setInterval(function() {
-      self.getRecyclingData();
-      Log.log("Triggering poll frequency");
+    // this.getRecyclingData();
+    // var self = this; 
+    // setInterval(function() {
+      // self.getRecyclingData();
+      this.getRecyclingData();
+      // Log.log("Triggering poll frequency");
       // get update time 
-      self.updateTime = moment().format('YYYY-MM-DD HH:mm:ss');
-    }, this.config.pollFrequency);
+    //   self.updateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+    // }, this.config.pollFrequency);
   },
 
   getRecyclingData: function(){
@@ -161,6 +169,23 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
     return wrapper;
+  },
+
+  // schedule next update of data while running 
+  // argument delay number - Milliseconds before next update. If empty, this.config.updateInterval is used.
+  scheduleUpdate: function(delay) {
+    var nextLoad = this.config.pollFrequency;
+    if(delay !== undefined && delay >= 0){
+      nextLoad = delay; 
+    }
+
+    var self = this; 
+    clearTimeout(this.updateTimer);
+    this.updateTimer = setTimeout(function(){
+      self.getRecyclingData();
+      self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
+      Log.log("triggering scheduled update");
+    }, nextLoad); 
   },
 
   // notificationReceived: function(notification, payload, sender) {
