@@ -158,7 +158,7 @@ Module.register("MMM-RecyclingCalendar", {
     if(this.config.showUpdateHint && this.pollTime !== undefined){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
-      updateHint.innerHTML = 'Last updated at '+this.pollTime; 
+      updateHint.innerHTML = '..last update at '+this.pollTime; 
 
       setTimeout(function() {
         updateHint.style.display='none';
@@ -169,23 +169,6 @@ Module.register("MMM-RecyclingCalendar", {
 
     return wrapper;
   },
-
-  // schedule next update of data while running 
-  // argument delay number - Milliseconds before next update. If empty, this.config.updateInterval is used.
-  // scheduleUpdate: function(delay) {
-  //   var nextLoad = this.config.pollFrequency;
-  //   if(delay !== undefined && delay >= 0){
-  //     nextLoad = delay; 
-  //   }
-
-  //   var self = this; 
-  //   clearTimeout(this.updateTimer);
-  //   this.updateTimer = setTimeout(function(){
-  //     self.getRecyclingData();
-  //     self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
-  //     Log.log("triggering scheduled update");
-  //   }, nextLoad); 
-  // },
 
   // notificationReceived: function(notification, payload, sender) {
   //   // if (sender) {
