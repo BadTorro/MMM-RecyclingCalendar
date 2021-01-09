@@ -125,6 +125,23 @@ The following options can be configured for the module.
         <strong>Default values: </strong><code>50</code><br />
         </td>
     </tr>
+    <tr>
+        <td><code>showUpdateHint</code></td>
+        <td>Shows a small hint at the bottom of list mentioning the last performed update time. 
+        <br /><br />
+        <strong>Default values: </strong><code>true</code><br />
+        <strong>Possible values:</strong><br />
+        <code>true</code>, <code>false</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>pollFrequency</code></td>
+        <td>Poll frequency / poll time when an update to the API source should be performed. 
+        <br /><br />
+        <strong>Default values: </strong><code>10 * 60 * 1000 (10 minutes in miliseconds)</code><br />
+        <strong>Possible values: </strong><code>milliseconds</code>
+        </td>
+    </tr>
   </tbody>
 </table>
 

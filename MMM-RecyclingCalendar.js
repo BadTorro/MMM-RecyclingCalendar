@@ -1,8 +1,3 @@
-
-// TOOD: 
-// Add timer to update dom / results after couple of minutes
-// Show time when update happend on the header / headline 
-
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
@@ -157,7 +152,7 @@ Module.register("MMM-RecyclingCalendar", {
     if(this.config.showUpdateHint && this.pollTime !== undefined){
       var updateHint = document.createElement('div');
       updateHint.className = 'xsmall dimmed italic'; 
-      updateHint.innerHTML = '..last update at '+this.pollTime; 
+      updateHint.innerHTML = 'last update at '+this.pollTime+'.'; 
 
       setTimeout(function() {
         updateHint.style.display='none';
