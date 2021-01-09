@@ -46,7 +46,7 @@ Module.register("MMM-RecyclingCalendar", {
     setInterval(function() {
       self.getRecyclingData();
       Log.log("Triggering poll frequency");
-      self.pollTime = moment().format('YYYY-MM-DD HH:mm:ss');
+      self.pollTime = moment().format('HH:mm:ss');
     }, this.config.pollFrequency);
   },
 
