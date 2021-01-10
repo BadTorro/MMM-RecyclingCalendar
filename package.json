@@ -8,7 +8,7 @@
     "url": "git+https://github.com/FatTony404/MMM-RecyclingCalendar.git"
   },
   "keywords": [
-    "recycling", 
+    "recycling",
     "zurich"
   ],
   "author": "FatTony404",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/FatTony404/MMM-RecyclingCalendar/issues"
   },
-  "homepage": "https://github.com/FatTony404/MMM-RecyclingCalendar#readme"
+  "homepage": "https://github.com/FatTony404/MMM-RecyclingCalendar#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
