@@ -1,0 +1,20 @@
+{
+  "name": "mmm-recyclingcalendar",
+  "version": "1.0.0",
+  "description": "MagicMirror module to show recycling data for Zurich",
+  "main": "MMM-RecyclingCalendar.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatTony404/MMM-RecyclingCalendar.git"
+  },
+  "keywords": [
+    "recycling", 
+    "zurich"
+  ],
+  "author": "FatTony404",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FatTony404/MMM-RecyclingCalendar/issues"
+  },
+  "homepage": "https://github.com/FatTony404/MMM-RecyclingCalendar#readme"
+}
