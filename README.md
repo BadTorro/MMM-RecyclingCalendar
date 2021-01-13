@@ -146,7 +146,7 @@ The following options can be configured for the module.
 </table>
 
 ## Icons
-<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>.
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 ## Notes
 The original script is from [MMM-MyWastePickup](https://github.com/jclarke0000/MMM-MyWastePickup) and [MMM-MyGarbage](https://github.com/htilburgs/MMM-MyGarbage), adapted to fit an API and different appearance. 
