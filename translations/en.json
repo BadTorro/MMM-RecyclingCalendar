@@ -1,5 +1,15 @@
 {
 	"FETCHING": "Fetching results...",
-	"NO_RESULTS": "No results avialable for current configuration."
+	"NO_RESULTS": "No results avialable for current configuration.", 
 
+	// waste types
+	"CARDBOARD": "cardboard", 
+	"CARGOTRAM": "cargotram", 
+	"ETRAM": "etram", 
+	"ORGANIC": "organic", 
+	"PAPER": "paper", 
+	"SPECIAL": "special", 
+	"TEXTILE": "textile", 
+	"WASTE": "waste", 
+	"METAL": "metal"
 }

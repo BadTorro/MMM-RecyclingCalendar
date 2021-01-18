@@ -93,7 +93,7 @@ Module.register("MMM-RecyclingCalendar", {
     }
 
     if(this.calendarData.length == 0){
-      wrapper.innerHTML = "NO_RESULTS"; 
+      wrapper.innerHTML = this.translate("NO_RESULTS"); 
       wrapper.className = "light small"; 
       return wrapper; 
     }
@@ -149,7 +149,7 @@ Module.register("MMM-RecyclingCalendar", {
       if(this.config.showStations && entry['station']){
         var stationContainer = document.createElement("div");
         stationContainer.className = "xsmall light";
-        stationContainer.innerHTML = entry['station'];
+        stationContainer.innerHTML = this.translate(entry['station'].toUpperCase());
         entriesContainer.appendChild(stationContainer);  
       }
       
