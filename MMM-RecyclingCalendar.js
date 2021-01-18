@@ -86,14 +86,14 @@ Module.register("MMM-RecyclingCalendar", {
     var wrapper = document.createElement("div");
 
     if(this.init == true){
-      wrapper.innerHTML = "Fetching results..."; 
+      wrapper.innerHTML = "FETCHING"; 
       wrapper.className = "dimmed light small"; 
       this.init = false; 
       return wrapper; 
     }
 
     if(this.calendarData.length == 0){
-      wrapper.innerHTML = "No results avialable for current configuration."; 
+      wrapper.innerHTML = "NO_RESULTS"; 
       wrapper.className = "light small"; 
       return wrapper; 
     }
@@ -130,6 +130,7 @@ Module.register("MMM-RecyclingCalendar", {
       }
       entriesContainer.appendChild(dateContainer);
 
+      // TODO add translations
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container"); 
@@ -137,7 +138,7 @@ Module.register("MMM-RecyclingCalendar", {
         iconContainer.appendChild(this.svgIconFactory(entry['type']));
         var expl = document.createElement("span");
         expl.className = "light xsmall";
-        expl.innerHTML = "  - "+entry['type'];
+        expl.innerHTML = "  - "+entry['type']; 
         iconContainer.appendChild(expl);
       } else {
         iconContainer.appendChild(this.svgIconFactory(entry['type']));
@@ -170,12 +171,4 @@ Module.register("MMM-RecyclingCalendar", {
 
     return wrapper;
   },
-
-  // notificationReceived: function(notification, payload, sender) {
-  //   // if (sender) {
-  //   //   Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
-  //   // } else {
-  //   //   Log.log(this.name + " received a system notification: " + notification);
-  //   // }
-  // },
 });
