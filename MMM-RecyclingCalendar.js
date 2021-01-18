@@ -122,7 +122,7 @@ Module.register("MMM-RecyclingCalendar", {
           if (date == today.format('dddd, DD.MM.YYYY')){
             dateContainer.innerHTML = "Today, "+date; 
           } else if (date == tomorrow.format('dddd, DD.MM.YYYY')){
-            dateContainer.innerHTML = "Tomorrow "+date;
+            dateContainer.innerHTML = "Tomorrow, "+date;
           } else {
             dateContainer.innerHTML = date; 
           }
