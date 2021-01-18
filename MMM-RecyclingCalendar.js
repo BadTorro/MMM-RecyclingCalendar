@@ -138,7 +138,7 @@ Module.register("MMM-RecyclingCalendar", {
         iconContainer.appendChild(this.svgIconFactory(entry['type']));
         var expl = document.createElement("span");
         expl.className = "light xsmall";
-        expl.innerHTML = "  - "+entry['type']; 
+        expl.innerHTML = "  - "+this.translate(entry['type'].toUpperCase()); 
         iconContainer.appendChild(expl);
       } else {
         iconContainer.appendChild(this.svgIconFactory(entry['type']));
@@ -149,8 +149,7 @@ Module.register("MMM-RecyclingCalendar", {
       if(this.config.showStations && entry['station']){
         var stationContainer = document.createElement("div");
         stationContainer.className = "xsmall light";
-        console.log("Station: "+entry['station']);
-        stationContainer.innerHTML = this.translate(entry['station'].toUpperCase());
+        stationContainer.innerHTML = entry['station'];
         entriesContainer.appendChild(stationContainer);  
       }
       
