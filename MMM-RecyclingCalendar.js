@@ -25,6 +25,13 @@ Module.register("MMM-RecyclingCalendar", {
   getScripts: function(){
     return ["moment.js"]
   },
+
+  getTranslations: function(){
+    return {
+      en: "translations/en.json", 
+      de: "translations/de.json"
+    }
+  },
     
   start: function (){ // is executed when module is loaded successfully 
     Log.info('Starting module: ' + this.name);
