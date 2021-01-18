@@ -86,7 +86,7 @@ Module.register("MMM-RecyclingCalendar", {
     var wrapper = document.createElement("div");
 
     if(this.init == true){
-      wrapper.innerHTML = "FETCHING"; 
+      wrapper.innerHTML = this.translate("FETCHING"); 
       wrapper.className = "dimmed light small"; 
       this.init = false; 
       return wrapper; 
