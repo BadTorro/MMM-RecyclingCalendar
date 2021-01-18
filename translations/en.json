@@ -2,7 +2,6 @@
 	"FETCHING": "Fetching results...",
 	"NO_RESULTS": "No results avialable for current configuration.", 
 
-	// waste types
 	"CARDBOARD": "cardboard", 
 	"CARGOTRAM": "cargotram", 
 	"ETRAM": "etram", 
