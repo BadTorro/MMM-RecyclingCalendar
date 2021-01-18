@@ -120,9 +120,9 @@ Module.register("MMM-RecyclingCalendar", {
         case 'daysAndDate':
           date = moment(date, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY');          
           if (date == today.format('dddd, DD.MM.YYYY')){
-            dateContainer.innerHTML = this.translate("TODAY")+", "+date; 
+            dateContainer.innerHTML = "Today, "+date; 
           } else if (date == tomorrow.format('dddd, DD.MM.YYYY')){
-            dateContainer.innerHTML = this.translate("TOMORROW")+", "+date;
+            dateContainer.innerHTML = "Tomorrow "+date;
           } else {
             dateContainer.innerHTML = date; 
           }
