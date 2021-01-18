@@ -150,6 +150,3 @@ The following options can be configured for the module.
 
 ## Notes
 The original script is from [MMM-MyWastePickup](https://github.com/jclarke0000/MMM-MyWastePickup) and [MMM-MyGarbage](https://github.com/htilburgs/MMM-MyGarbage), adapted to fit an API and different appearance. 
-
-#### ToDo:
-- Languate translations
