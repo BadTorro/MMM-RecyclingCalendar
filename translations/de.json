@@ -1,5 +1,14 @@
 {
 	"FETCHING": "Lade Ergebnisse...",
-	"NO_RESULTS": "No results avialable for current configuration."
+	"NO_RESULTS": "Keine Ergebnisse für das angegebene Datum vorhanden.", 
 
+	"CARDBOARD": "Karton", 
+	"CARGOTRAM": "Cargotram", 
+	"ETRAM": "E-Tram", 
+	"ORGANIC": "Organisch", 
+	"PAPER": "Papier", 
+	"SPECIAL": "Spezial", 
+	"TEXTILE": "Textil", 
+	"WASTE": "Restmüll", 
+	"METAL": "Metall"
 }
