@@ -2,9 +2,6 @@
 	"FETCHING": "Fetching results...",
 	"NO_RESULTS": "No results avialable for current configuration.", 
 
-	"TOMORROW": "Tomorrow", 
-	"TODAY": "Today",
-
 	"CARDBOARD": "cardboard", 
 	"CARGOTRAM": "cargotram", 
 	"ETRAM": "etram", 
