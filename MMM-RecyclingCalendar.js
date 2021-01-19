@@ -84,6 +84,11 @@ Module.register("MMM-RecyclingCalendar", {
 
   getDom: function() {
     var wrapper = document.createElement("div");
+    var header = document.createElement("header");
+    var name = document.createElement("span");
+    name.innerHTML = "" + this.translate("HEADER");
+    header.appendChild(name);
+    wrapper.appendChild(header);
 
     if(this.init == true){
       wrapper.innerHTML = this.translate("FETCHING"); 
