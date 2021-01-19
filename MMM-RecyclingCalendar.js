@@ -1,6 +1,7 @@
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
+    header: this.translate("HEADER"),
     zipCode: 8047, 
     daysToDisplay: 7,  
     url: "http://openerz.metaodi.ch/api/calendar.json",
@@ -84,6 +85,11 @@ Module.register("MMM-RecyclingCalendar", {
 
   getDom: function() {
     var wrapper = document.createElement("div");
+    var header = document.createElement("header");
+    var name = document.createElement("span");
+    name.innerHTML = "" + this.config.header;
+    header.appendChild(name);
+    wrapper.appendChild(header);
 
     if(this.init == true){
       wrapper.innerHTML = this.translate("FETCHING"); 
