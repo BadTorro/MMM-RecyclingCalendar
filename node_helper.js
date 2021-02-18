@@ -20,6 +20,7 @@ module.exports = NodeHelper.create({
     params.append('sort', payload.sort);
     // TODO 
     // multiple types parameter with number of given types 
+    console.log("Types: "+payload.showTypes);
     if(payload.showTypes != ""){
       params.append('types', payload.showTypes);
     }
