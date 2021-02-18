@@ -22,11 +22,19 @@ module.exports = NodeHelper.create({
     // multiple types parameter with number of given types 
     console.log("Types: "+payload.showTypes);
     if(payload.showTypes != ""){
-      params.append('types', payload.showTypes);
+      for(var i = 0; i<payload.showTypes.length; i++){
+        params.append('types', payload.showTypes[i]);
+      }
+
+      // for (var i=0; i<self.config.skiareas.length; i++) {
+      //   // console.log("searching for " + self.config.skiareas[i]);
+      //   selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
+      // }
     }
     params.append('limit', payload.limitEntries);
 
     url.search = params.toString();
+    console.log("URL: "+url.search);
 
     (async () => {
       try {
