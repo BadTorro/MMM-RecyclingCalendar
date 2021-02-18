@@ -27,7 +27,7 @@ Go to the MagicMirror/config directory and edit the config.js file. Add the modu
     daysToDisplay: 7,
     showStations: true,
     showExplanation: true, 
-    showTypes: [ 'cardboard', 'waste', 'organic'],
+    showTypes: ['cardboard', 'waste', 'organic'],
     showDate: "daysAndDate",
     showColorIcons: true, 
   }
