@@ -72,7 +72,7 @@ The following options can be configured for the module.
         </td>
     </tr>
     <tr>
-        <td><code>showType</code></td>
+        <td><code>showTypes</code></td>
         <td>Select the type of recycling setting to show.
         <br /><br />
         <strong>Default values: </strong><code>  </code> (empty, none)<br />

@@ -18,8 +18,10 @@ module.exports = NodeHelper.create({
     params.append('start', startdate);
     params.append('end', enddate);
     params.append('sort', payload.sort);
-    if(payload.showType != ""){
-      params.append('types', payload.showType);
+    // TODO 
+    // multiple types parameter with number of given types 
+    if(payload.showTypes != ""){
+      params.append('types', payload.showTypes);
     }
     params.append('limit', payload.limitEntries);
 
