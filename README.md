@@ -27,7 +27,9 @@ Go to the MagicMirror/config directory and edit the config.js file. Add the modu
     daysToDisplay: 7,
     showStations: true,
     showExplanation: true, 
-    showDate: "daysAndDate"
+    showTypes: [ 'cardboard', 'waste', 'organic'],
+    showDate: "daysAndDate",
+    showColorIcons: true, 
   }
 }
 ```
@@ -73,7 +75,7 @@ The following options can be configured for the module.
     </tr>
     <tr>
         <td><code>showTypes</code></td>
-        <td>Select the type of recycling setting to show.
+        <td>Select one or more recycling types to show.
         <br /><br />
         <strong>Default values: </strong><code>  </code> (empty, none)<br />
         <strong>Possible values: <br /></strong>
