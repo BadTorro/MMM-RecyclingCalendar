@@ -6,7 +6,7 @@ Module.register("MMM-RecyclingCalendar", {
     url: "http://openerz.metaodi.ch/api/calendar.json",
     sort: "date",
     showDate: "daysAndDate",
-    showTypes: "", 
+    showTypes: ['cardboard', 'waste'], 
     showStations: false,
     showExplanation: false, 
     showColorIcons: false,
