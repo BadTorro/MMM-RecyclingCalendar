@@ -9,7 +9,7 @@ Clone this repository in your modules folder, and install dependencies:
 
 ```
 cd ~/MagicMirror/modules 
-git clone https://github.com/FatTony123/MMM-RecyclingCalendar.git
+git clone https://github.com/FatTony404/MMM-RecyclingCalendar.git
 cd MMM-RecyclingCalendar
 npm install 
 ```
