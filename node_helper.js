@@ -1,6 +1,7 @@
 const NodeHelper = require("node_helper");
 const moment = require("moment");
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require('cross-fetch');
+// const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 // const fetch = require("node-fetch");
 
 
