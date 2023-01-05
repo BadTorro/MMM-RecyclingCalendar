@@ -27,7 +27,6 @@ module.exports = NodeHelper.create({
     
     url.search = params.toString();
 
-    console.log("SEARCH URL: "+url);
 
     (async () => {
       try {
