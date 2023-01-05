@@ -1,9 +1,7 @@
 const NodeHelper = require("node_helper");
 const moment = require("moment");
 const fetch = require('cross-fetch');
-// const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 // const fetch = require("node-fetch");
-
 
 module.exports = NodeHelper.create({
   start: function() {
@@ -29,6 +27,8 @@ module.exports = NodeHelper.create({
     params.append('limit', payload.limitEntries);
     
     url.search = params.toString();
+
+    console.log("search url: "+url.toString);
 
     (async () => {
       try {
