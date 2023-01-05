@@ -1,7 +1,6 @@
 const NodeHelper = require("node_helper");
 const moment = require("moment");
 const fetch = require('cross-fetch');
-// const fetch = require("node-fetch");
 
 module.exports = NodeHelper.create({
   start: function() {

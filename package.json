@@ -18,8 +18,7 @@
   },
   "homepage": "https://github.com/FatTony404/MMM-RecyclingCalendar#readme",
   "dependencies": {
-    "cross-fetch": "^3.1.5",
-    "node-fetch": ">=3.0.0"
+    "cross-fetch": "^3.1.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
