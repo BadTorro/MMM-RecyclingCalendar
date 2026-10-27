@@ -1,10 +1,12 @@
 Module.register("MMM-RecyclingCalendar", {
     
   defaults: {
-    zipCode: 8047, 
+    region: "",
+    zipCode: 8942,
     daysToDisplay: 7,  
-    url: "http://openerz.metaodi.ch/api/calendar.json",
-    sort: "date",
+    url: "https://openerz.metaodi.ch/api/calendar.json",
+    sort: "date:asc",
+    language: "de",
     showDate: "daysAndDate",
     showTypes: "",
     showStations: false,
@@ -71,10 +73,12 @@ Module.register("MMM-RecyclingCalendar", {
     var svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
     svg.setAttributeNS(null, "class", "entry-icon " + type);
     var use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    if(this.config.showColorIcons){
-      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite_color.svg#") + type);
+    var iconTypes = ["cardboard", "cargotram", "etram", "metal", "organic", "paper", "special", "textile", "waste"];
+    var iconType = iconTypes.indexOf(type) !== -1 ? type : "general";
+    if(this.config.showColorIcons && iconType !== "general"){
+      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite_color.svg#") + iconType);
     } else {
-      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + type);
+      use.setAttributeNS("http://www.w3.org/1999/xlink", "href", this.file("icons/icon_sprite.svg#") + iconType);
     }
     
     svg.appendChild(use);
@@ -84,11 +88,6 @@ Module.register("MMM-RecyclingCalendar", {
 
   getDom: function() {
     var wrapper = document.createElement("div");
-    var header = document.createElement("header");
-    var name = document.createElement("span");
-    name.innerHTML = "" + this.translate("HEADER");
-    header.appendChild(name);
-    wrapper.appendChild(header);
 
     if(this.init == true){
       wrapper.innerHTML = this.translate("FETCHING"); 
@@ -139,14 +138,15 @@ Module.register("MMM-RecyclingCalendar", {
       // add icon for type 
       var iconContainer = document.createElement("span");
       iconContainer.classList.add("entry-icon-container"); 
+      var type = entry['type'] || entry['waste_type'];
       if(this.config.showExplanation){
-        iconContainer.appendChild(this.svgIconFactory(entry['type']));
+        iconContainer.appendChild(this.svgIconFactory(type));
         var expl = document.createElement("span");
         expl.className = "light xsmall";
-        expl.innerHTML = "  - "+this.translate(entry['type'].toUpperCase()); 
+        expl.innerHTML = "  - "+this.translate(type.toUpperCase());
         iconContainer.appendChild(expl);
       } else {
-        iconContainer.appendChild(this.svgIconFactory(entry['type']));
+        iconContainer.appendChild(this.svgIconFactory(type));
       }
       entriesContainer.appendChild(iconContainer);
       

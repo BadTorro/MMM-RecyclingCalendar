@@ -14,16 +14,22 @@ module.exports = NodeHelper.create({
     var url = new URL(payload.url);
 
     var params = new URLSearchParams();
-    params.append('zip', payload.zipCode);
+    if(payload.region){
+      params.append('region', payload.region);
+    } else {
+      params.append('zip', payload.zipCode);
+    }
     params.append('start', startdate);
     params.append('end', enddate);
     params.append('sort', payload.sort);
+    params.append('offset', '0');
     if(payload.showTypes != ""){
       for(var i = 0; i<payload.showTypes.length; i++){
         params.append('types', payload.showTypes[i]);
       }
     }
     params.append('limit', payload.limitEntries);
+    params.append('lang', payload.language || 'de');
     
     url.search = params.toString();
 
@@ -36,7 +42,12 @@ module.exports = NodeHelper.create({
         });
         var json = "";
         if(response.status >= 200 && response.status <= 299){
-          json = await response.json();        
+          json = await response.json();
+          if(Array.isArray(json.result)){
+            json.result = json.result.map(function(entry){
+              return Object.assign({}, entry, { type: entry.waste_type || entry.type });
+            });
+          }
           this.sendSocketNotification('CALENDAR_RESULT', json);
         } else {
           console.log(response.status, response.statusText);

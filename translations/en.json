@@ -1,7 +1,7 @@
 {
 	"HEADER": "Recycling Calendar", 
 	"FETCHING": "Fetching results...",
-	"NO_RESULTS": "No results avialable for current configuration.", 
+	"NO_RESULTS": "No results available for current configuration.", 
 
 	"TOMORROW": "Tomorrow", 
 	"TODAY": "Today",
@@ -14,5 +14,6 @@
 	"SPECIAL": "special", 
 	"TEXTILE": "textile", 
 	"WASTE": "waste", 
-	"METAL": "metal"
+	"METAL": "metal",
+	"CHIPPING_SERVICE": "chipping service"
 }

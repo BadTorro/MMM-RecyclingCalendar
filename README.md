@@ -23,11 +23,10 @@ Go to the MagicMirror/config directory and edit the config.js file. Add the modu
   position: "top_left",
   header: "Recycling Calendar",
   config: {
-    zipCode: 8001, 
+    region: "zurich",
     daysToDisplay: 7,
     showStations: true,
     showExplanation: true, 
-    showTypes: ['cardboard', 'waste', 'organic'],
     showDate: "daysAndDate",
     showColorIcons: true, 
   }
@@ -45,8 +44,23 @@ The following options can be configured for the module.
   </thead>
   <tbody>
     <tr>
+        <td><code>region</code></td>
+        <td>OpenERZ region slug to request. Set this to <code>zurich</code> for the city of Zürich. When set, the API filters by region instead of postal code.
+        <br /><br />
+        <strong>Default value: </strong><code>""</code> (use <code>zipCode</code>)<br />
+        </td>
+    </tr>
+    <tr>
+        <td><code>language</code></td>
+        <td>Language passed to OpenERZ for localized collection descriptions.
+        <br /><br />
+        <strong>Default value: </strong><code>de</code><br />
+        <strong>Possible values:</strong> <code>de</code>, <code>en</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>zipCode</code></td>
-        <td>Enter the zipCode of Zurich region you want to display 
+        <td>Postal code used when <code>region</code> is empty. The module default is <code>8942</code>; set a postal code in Zürich (for example, <code>8001</code>) if using postal-code filtering.
         <br /><br />
         <strong>Default values: </strong><code>4 digit zip code</code><br />
         <strong>Possible values:</strong>
@@ -75,7 +89,7 @@ The following options can be configured for the module.
     </tr>
     <tr>
         <td><code>showTypes</code></td>
-        <td>Select one or more recycling types to show.
+        <td>Optionally select one or more recycling types to show. Leave empty to show all types returned for the selected region.
         <br /><br />
         <strong>Default values: </strong><code>  </code> (empty, none)<br />
         <strong>Possible values: <br /></strong>
@@ -88,6 +102,7 @@ The following options can be configured for the module.
         <code>special</code> - Shows special recycling for given date period<br />
         <code>textile</code> - Shows textile recycling for given date period<br />
         <code>waste</code> - Shows waste recycling for given date period<br />
+        <code>chipping_service</code> - Shows chipping service collections where available<br />
         </td>
     </tr>
     <tr>
