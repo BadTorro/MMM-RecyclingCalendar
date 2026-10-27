@@ -153,9 +153,9 @@ The following options can be configured for the module.
     </tr>
     <tr>
         <td><code>pollFrequency</code></td>
-        <td>Poll frequency / poll time when an update to the API source should be performed. 
+        <td>How often the module refreshes calendar data from the API.
         <br /><br />
-        <strong>Default values: </strong><code>10 * 60 * 1000 </code>(10 minutes in miliseconds)<br />
+        <strong>Default value: </strong><code>24 * 60 * 60 * 1000</code> (24 hours in milliseconds)<br />
         <strong>Possible values: </strong><code>milliseconds</code>
         </td>
     </tr>

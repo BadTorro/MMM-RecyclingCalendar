@@ -14,7 +14,7 @@ Module.register("MMM-RecyclingCalendar", {
     showColorIcons: false,
     limitEntries: "50", 
     showUpdateHint: true,
-    pollFrequency: 10 * 60 * 1000, // every 10 minutes 
+    pollFrequency: 24 * 60 * 60 * 1000, // every 24 hours
   },
   
 
