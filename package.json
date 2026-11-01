@@ -1,6 +1,6 @@
 {
   "name": "mmm-recyclingcalendar",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "MagicMirror module to show recycling data for Zurich",
   "main": "MMM-RecyclingCalendar.js",
   "repository": {
