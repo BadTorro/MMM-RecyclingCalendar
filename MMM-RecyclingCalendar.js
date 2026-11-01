@@ -37,6 +37,7 @@ Module.register("MMM-RecyclingCalendar", {
     
   start: function (){ // is executed when module is loaded successfully 
     Log.info('Starting module: ' + this.name);
+    this.loaded = false;
 
     // setting locale
     moment.locale(config.language);
@@ -46,8 +47,12 @@ Module.register("MMM-RecyclingCalendar", {
     this.pollTime; 
     this.hideTime = 30000; // hides update hint after given time 
 
-    this.getRecyclingData();
-    var self = this; 
+    var self = this;
+
+    setTimeout(function() {
+      self.getRecyclingData();
+    }, 500);
+
     setInterval(function() {
       self.getRecyclingData();
       self.pollTime = moment().format('HH:mm:ss');
